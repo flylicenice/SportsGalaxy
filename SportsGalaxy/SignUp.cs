@@ -1,26 +1,30 @@
-﻿using System;
+﻿using BCrypt.Net;
+using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.Pkcs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BCrypt.Net;
-using MySql.Data.MySqlClient;
 
 namespace SportsGalaxy
 {
     public partial class SignUp : Form
     {
+        PrivateFontCollection pfc = new PrivateFontCollection();
         private string connectionStringSql = @"Server=localhost;Database=sports_galaxy;Uid=root;Pwd=12345678;";
         private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\oknev\source\repos\SportsGalaxy\SportsGalaxy\Database.mdf;Integrated Security=True";
         string userID = Guid.NewGuid().ToString();
         public SignUp()
         {
             InitializeComponent();
+            LoadCustomFont();
         }
 
         private void closeLinkLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -30,7 +34,7 @@ namespace SportsGalaxy
 
         private void signUpBtn_Click(object sender, EventArgs e)
         {
-            string insertQuery = "INSERT INTO user (user_id, user_name, password, email, created_at, phone_number, full_name, gender, matric_no) VALUES (@user_id, @user_name, @password, @email, @created_at, @phone_number, @full_name, @gender, @matric_no)";
+            string insertQuery = "INSERT INTO [User] (user_id, user_name, password, email, created_at, phone_number, full_name, gender, matric_no) VALUES (@user_id, @user_name, @password, @email, @created_at, @phone_number, @full_name, @gender, @matric_no)";
 
             if (passwordTxtBox.Text != confirmPassTxtBox.Text)
             {
@@ -45,9 +49,9 @@ namespace SportsGalaxy
             } 
 
             //Initialize connection and command 
-            using (MySqlConnection connection = new MySqlConnection(connectionStringSql))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (MySqlCommand command = new MySqlCommand(insertQuery, connection))
+                using (SqlCommand command = new SqlCommand(insertQuery, connection))
                 { 
                     command.Parameters.AddWithValue("@user_id", userID);
                     command.Parameters.AddWithValue("@user_name", userNameTxtBox.Text);
@@ -94,46 +98,171 @@ namespace SportsGalaxy
             matricNoTxtBox.Text = "";
         }
 
-        private void userNameTxtBox_TextChanged(object sender, EventArgs e)
+        private void LoadCustomFont()
         {
-            using (MySqlConnection connection = new MySqlConnection(connectionStringSql))
+            pfc.AddFontFile(@"Fonts\PixelifySans-Regular.ttf");
+            pfc.AddFontFile(@"Fonts\PixelifySans-Bold.ttf");
+
+            // Apply to your controls
+            skyLabel1.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
+            skyLabel2.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
+            skyLabel3.Font = new Font(pfc.Families[0], 28, FontStyle.Bold);
+            skyLabel4.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
+            skyLabel5.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
+            skyLabel6.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
+            skyLabel7.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
+            skyLabel8.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
+            skyLabel9.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
+            errorLbl.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
+            userNameTxtBox.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
+            fullNameTxtBox.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
+            emailTxtBox.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
+            phoneNoTextBox.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
+            matricNoTxtBox.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
+            genderComboBox.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
+            signUpBtn.Font = new Font(pfc.Families[0], 10, FontStyle.Bold);
+            cancelLinkLbl.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
+        }
+
+        private void userNameTxtBox_Validating(object sender, CancelEventArgs e)
+        {
+            int userCount = 0;
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (MySqlCommand command = new MySqlCommand("SELECT COUNT(*) FROM user WHERE user_name = @user_name", connection))
+                using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM [User] WHERE user_name = @user_name", connection))
                 {
                     command.Parameters.AddWithValue("@user_name", userNameTxtBox.Text);
 
                     try
                     {
                         connection.Open();
-                        long userCount = (long)command.ExecuteScalar();
-                        if (userCount > 0)
-                        {
-                            errorLbl.Text = "Username is already taken. Please choose another.";
-                            errorLbl.Visible = true;
-                        }
-                        else if (userNameTxtBox.Text.Length > 20)
-                        {
-                            errorLbl.Text = "Username cannot exceed 20 characters.";
-                            errorLbl.Visible = true;
-                        } else
-                        {
-                            errorLbl.Visible = false;
-                        }
-
-                    } catch (Exception ex)
+                        userCount = (int)command.ExecuteScalar();
+                    }
+                    catch (Exception ex)
                     {
                         MessageBox.Show("There was an error checking the username: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
+
+            if (string.IsNullOrEmpty(userNameTxtBox.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(userNameTxtBox, "Username is required.");
+            }
+            else if (userCount > 0)
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(userNameTxtBox, "Username is already taken. Please choose another.");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(userNameTxtBox, "");
+            }
         }
 
-        private void fullNameTextBox_TextChanged(object sender, EventArgs e)
+        private void fullNameTxtBox_Validating(object sender, CancelEventArgs e)
         {
-            if (fullNameTxtBox.Text.Length > 50)
+            if (string.IsNullOrEmpty(fullNameTxtBox.Text))
             {
-                errorLbl.Text = "Full name cannot exceed 50 characters.";
-                errorLbl.Visible = true;
+                e.Cancel = true;
+                errorProvider2.SetError(fullNameTxtBox, "Full name is required.");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider2.SetError(fullNameTxtBox, "");
+            }
+        }
+
+        private void emailTxtBox_Validating(object sender, CancelEventArgs e)
+        {
+            int userCount = 0;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM [User] WHERE email = @email", connection))
+                {
+                    command.Parameters.AddWithValue("@email", emailTxtBox.Text);
+
+                    try
+                    {
+                        connection.Open();
+                        userCount = (int)command.ExecuteScalar();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("There was an error checking the email: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+
+            if (string.IsNullOrEmpty(emailTxtBox.Text))
+            {
+                e.Cancel = true;
+                errorProvider3.SetError(emailTxtBox, "Email is required.");
+            }
+            else if (userCount > 0)
+            {
+                e.Cancel = true;
+                errorProvider3.SetError(emailTxtBox, "Email is already registered. Please use another.");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider3.SetError(emailTxtBox, "");
+            }
+        }
+
+        private void matricNoTxtBox_Validating(object sender, CancelEventArgs e)
+        {
+            int userCount = 0;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM [User] WHERE matric_no = @matricNo", connection))
+                {
+                    command.Parameters.AddWithValue("@matricNo", matricNoTxtBox.Text);
+
+                    try
+                    {
+                        connection.Open();
+                        userCount = (int)command.ExecuteScalar();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("There was an error checking the matric number: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+
+            if (string.IsNullOrEmpty(matricNoTxtBox.Text))
+            {
+                e.Cancel = true;
+                errorProvider4.SetError(matricNoTxtBox, "Matric number is required.");
+            }
+            else if (userCount > 0)
+            {
+                e.Cancel = true;
+                errorProvider4.SetError(matricNoTxtBox, "Matric number is already registered. Please use another.");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider4.SetError(matricNoTxtBox, "");
+            }
+        }
+
+        private void phoneNoTxtBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(phoneNoTextBox.Text))
+            {
+                e.Cancel = true;
+                errorProvider5.SetError(phoneNoTextBox, "Phone number is required.");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider5.SetError(phoneNoTextBox, "");
             }
         }
     }

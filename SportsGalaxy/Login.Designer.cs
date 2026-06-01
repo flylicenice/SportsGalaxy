@@ -36,7 +36,7 @@
             this.userNameTxtBox = new ReaLTaiizor.Controls.SkyTextBox();
             this.passwordTxtBox = new ReaLTaiizor.Controls.SkyTextBox();
             this.loginBtnToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.forgotPasswdLink = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // closeLinkLbl
@@ -47,7 +47,7 @@
             this.closeLinkLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.closeLinkLbl.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.closeLinkLbl.LinkColor = System.Drawing.Color.White;
-            this.closeLinkLbl.Location = new System.Drawing.Point(775, 385);
+            this.closeLinkLbl.Location = new System.Drawing.Point(751, 440);
             this.closeLinkLbl.Name = "closeLinkLbl";
             this.closeLinkLbl.Size = new System.Drawing.Size(31, 17);
             this.closeLinkLbl.TabIndex = 3;
@@ -63,7 +63,7 @@
             this.signUpLink.ForeColor = System.Drawing.Color.LightGray;
             this.signUpLink.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.signUpLink.LinkColor = System.Drawing.Color.DarkGray;
-            this.signUpLink.Location = new System.Drawing.Point(719, 299);
+            this.signUpLink.Location = new System.Drawing.Point(699, 354);
             this.signUpLink.Name = "signUpLink";
             this.signUpLink.Size = new System.Drawing.Size(132, 16);
             this.signUpLink.TabIndex = 2;
@@ -93,7 +93,7 @@
             this.loginBtn.HoverBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(25)))), ((int)(((byte)(73)))), ((int)(((byte)(109)))));
             this.loginBtn.HoverForeColor = System.Drawing.Color.White;
             this.loginBtn.HoverShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.loginBtn.Location = new System.Drawing.Point(718, 225);
+            this.loginBtn.Location = new System.Drawing.Point(698, 280);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.NormalBGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.loginBtn.NormalBGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
@@ -116,7 +116,7 @@
             this.skyLabel1.BackColor = System.Drawing.Color.Transparent;
             this.skyLabel1.Font = new System.Drawing.Font("Gill Sans MT", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.skyLabel1.ForeColor = System.Drawing.Color.Transparent;
-            this.skyLabel1.Location = new System.Drawing.Point(568, 19);
+            this.skyLabel1.Location = new System.Drawing.Point(537, 62);
             this.skyLabel1.Name = "skyLabel1";
             this.skyLabel1.Size = new System.Drawing.Size(438, 87);
             this.skyLabel1.TabIndex = 8;
@@ -132,7 +132,7 @@
             this.userNameTxtBox.BorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
             this.userNameTxtBox.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userNameTxtBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.userNameTxtBox.Location = new System.Drawing.Point(662, 120);
+            this.userNameTxtBox.Location = new System.Drawing.Point(642, 175);
             this.userNameTxtBox.MaxLength = 32767;
             this.userNameTxtBox.MultiLine = false;
             this.userNameTxtBox.Name = "userNameTxtBox";
@@ -144,6 +144,8 @@
             this.userNameTxtBox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.userNameTxtBox.UnknownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.userNameTxtBox.UseSystemPasswordChar = false;
+            this.userNameTxtBox.Enter += new System.EventHandler(this.userNameTxtBox_Enter);
+            this.userNameTxtBox.Leave += new System.EventHandler(this.userNameTxtBox_Leave);
             // 
             // passwordTxtBox
             // 
@@ -155,7 +157,7 @@
             this.passwordTxtBox.BorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
             this.passwordTxtBox.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTxtBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.passwordTxtBox.Location = new System.Drawing.Point(662, 169);
+            this.passwordTxtBox.Location = new System.Drawing.Point(642, 224);
             this.passwordTxtBox.MaxLength = 32767;
             this.passwordTxtBox.MultiLine = false;
             this.passwordTxtBox.Name = "passwordTxtBox";
@@ -170,20 +172,21 @@
             this.passwordTxtBox.Enter += new System.EventHandler(this.passwordTxtBox_Enter);
             this.passwordTxtBox.Leave += new System.EventHandler(this.passwordTxtBox_Leave);
             // 
-            // linkLabel1
+            // forgotPasswdLink
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.ForeColor = System.Drawing.Color.LightGray;
-            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkLabel1.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel1.Location = new System.Drawing.Point(742, 332);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(101, 16);
-            this.linkLabel1.TabIndex = 12;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Forgot Password?";
+            this.forgotPasswdLink.AutoSize = true;
+            this.forgotPasswdLink.BackColor = System.Drawing.Color.Transparent;
+            this.forgotPasswdLink.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.forgotPasswdLink.ForeColor = System.Drawing.Color.LightGray;
+            this.forgotPasswdLink.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.forgotPasswdLink.LinkColor = System.Drawing.Color.Red;
+            this.forgotPasswdLink.Location = new System.Drawing.Point(711, 387);
+            this.forgotPasswdLink.Name = "forgotPasswdLink";
+            this.forgotPasswdLink.Size = new System.Drawing.Size(101, 16);
+            this.forgotPasswdLink.TabIndex = 12;
+            this.forgotPasswdLink.TabStop = true;
+            this.forgotPasswdLink.Text = "Forgot Password?";
+            this.forgotPasswdLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.forgotPasswdLink_LinkClicked);
             // 
             // Login
             // 
@@ -193,7 +196,7 @@
             this.BackgroundImage = global::SportsGalaxy.Properties.Resources.bg_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1018, 590);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.forgotPasswdLink);
             this.Controls.Add(this.passwordTxtBox);
             this.Controls.Add(this.userNameTxtBox);
             this.Controls.Add(this.skyLabel1);
@@ -219,6 +222,6 @@
         private ReaLTaiizor.Controls.SkyTextBox userNameTxtBox;
         private ReaLTaiizor.Controls.SkyTextBox passwordTxtBox;
         private System.Windows.Forms.ToolTip loginBtnToolTip;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel forgotPasswdLink;
     }
 }

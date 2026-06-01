@@ -1,24 +1,31 @@
-﻿using System;
+﻿using BCrypt.Net;
+using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.Pkcs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BCrypt.Net;
-using MySql.Data.MySqlClient;
+using static ReaLTaiizor.Drawing.Poison.PoisonPaint.ForeColor;
 
 namespace SportsGalaxy
 {
     public partial class Login : Form
     {
+        PrivateFontCollection pfc = new PrivateFontCollection();
         private string connectionStringSql = @"Server=localhost;Database=sports_galaxy;Uid=root;Pwd=12345678;";
+        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\oknev\source\repos\SportsGalaxy\SportsGalaxy\Database.mdf;Integrated Security=True";
         public Login()
         {
             InitializeComponent();
+            LoadCustomFont();
         }
 
         private void signUpLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -42,17 +49,17 @@ namespace SportsGalaxy
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            string selectQuery = "SELECT * FROM user WHERE user_name = @Username";
+            string selectQuery = "SELECT * FROM [User] WHERE user_name = @Username";
 
-            using (MySqlConnection connection = new MySqlConnection(connectionStringSql))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (MySqlCommand command = new MySqlCommand(selectQuery, connection))
+                using (SqlCommand command = new SqlCommand(selectQuery, connection))
                 {
                     command.Parameters.AddWithValue("@Username", userNameTxtBox.Text);
                     try
                     {
                         connection.Open();
-                        MySqlDataReader reader = command.ExecuteReader();
+                        SqlDataReader reader = command.ExecuteReader();
                         if (reader.Read())
                         {
                             string storedHash = reader["password"].ToString();
@@ -83,12 +90,6 @@ namespace SportsGalaxy
             }
         }
 
-        private void passwordTxtBox_Click(object sender, EventArgs e)
-        {
-            passwordTxtBox.Text = "";
-            passwordTxtBox.UseSystemPasswordChar = true;
-        }
-
         private void passwordTxtBox_Enter(object sender, EventArgs e)
         {
             if (passwordTxtBox.Text == "Password")
@@ -105,6 +106,43 @@ namespace SportsGalaxy
                 passwordTxtBox.UseSystemPasswordChar = false;
                 passwordTxtBox.Text = "Password";
             }
+        }
+
+        private void userNameTxtBox_Enter(object sender, EventArgs e)
+        {
+            if (userNameTxtBox.Text == "Username")
+            {
+                userNameTxtBox.Text = "";
+            }
+        }
+
+        private void userNameTxtBox_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(userNameTxtBox.Text))
+            {
+                userNameTxtBox.Text = "Username";
+            }
+        }
+
+        private void forgotPasswdLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ForgetPassword forgetPasswordForm = new ForgetPassword();
+            forgetPasswordForm.ShowDialog();
+        }
+
+        private void LoadCustomFont()
+        {
+            pfc.AddFontFile(@"Fonts\PixelifySans-Regular.ttf");
+            pfc.AddFontFile(@"Fonts\PixelifySans-Bold.ttf");
+
+            // Apply to your controls
+            userNameTxtBox.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
+            passwordTxtBox.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
+            loginBtn.Font = new Font(pfc.Families[0], 12, FontStyle.Bold);
+            skyLabel1.Font = new Font(pfc.Families[0], 48, FontStyle.Bold);
+            signUpLink.Font = new Font(pfc.Families[0], 9, FontStyle.Bold);
+            forgotPasswdLink.Font = new Font(pfc.Families[0], 9, FontStyle.Bold);
+            closeLinkLbl.Font = new Font(pfc.Families[0], 9, FontStyle.Bold);
         }
     }
 }

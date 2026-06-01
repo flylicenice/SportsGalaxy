@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUp));
             this.WorkingArea = new System.Windows.Forms.Panel();
             this.skyLabel1 = new ReaLTaiizor.Controls.SkyLabel();
             this.userNameTxtBox = new ReaLTaiizor.Controls.SkyTextBox();
@@ -50,7 +52,17 @@
             this.skyLabel8 = new ReaLTaiizor.Controls.SkyLabel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.errorLbl = new ReaLTaiizor.Controls.SkyLabel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
             this.SuspendLayout();
             // 
             // WorkingArea
@@ -94,7 +106,7 @@
             this.userNameTxtBox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.userNameTxtBox.UnknownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.userNameTxtBox.UseSystemPasswordChar = false;
-            this.userNameTxtBox.TextChanged += new System.EventHandler(this.userNameTxtBox_TextChanged);
+            this.userNameTxtBox.Validating += new System.ComponentModel.CancelEventHandler(this.userNameTxtBox_Validating);
             // 
             // skyLabel2
             // 
@@ -128,7 +140,7 @@
             this.fullNameTxtBox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.fullNameTxtBox.UnknownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.fullNameTxtBox.UseSystemPasswordChar = false;
-            this.fullNameTxtBox.TextChanged += new System.EventHandler(this.fullNameTextBox_TextChanged);
+            this.fullNameTxtBox.Validating += new System.ComponentModel.CancelEventHandler(this.fullNameTxtBox_Validating);
             // 
             // skyLabel3
             // 
@@ -163,6 +175,7 @@
             this.emailTxtBox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.emailTxtBox.UnknownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.emailTxtBox.UseSystemPasswordChar = false;
+            this.emailTxtBox.Validating += new System.ComponentModel.CancelEventHandler(this.emailTxtBox_Validating);
             // 
             // skyLabel4
             // 
@@ -196,6 +209,7 @@
             this.phoneNoTextBox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.phoneNoTextBox.UnknownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.phoneNoTextBox.UseSystemPasswordChar = false;
+            this.phoneNoTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.phoneNoTxtBox_Validating);
             // 
             // skyLabel5
             // 
@@ -279,6 +293,7 @@
             this.matricNoTxtBox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.matricNoTxtBox.UnknownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.matricNoTxtBox.UseSystemPasswordChar = false;
+            this.matricNoTxtBox.Validating += new System.ComponentModel.CancelEventHandler(this.matricNoTxtBox_Validating);
             // 
             // skyLabel6
             // 
@@ -449,6 +464,36 @@
             this.errorLbl.Text = "***Please follow the rule";
             this.errorLbl.Visible = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider2.ContainerControl = this;
+            this.errorProvider2.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider2.Icon")));
+            // 
+            // errorProvider3
+            // 
+            this.errorProvider3.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider3.ContainerControl = this;
+            this.errorProvider3.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider3.Icon")));
+            // 
+            // errorProvider4
+            // 
+            this.errorProvider4.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider4.ContainerControl = this;
+            this.errorProvider4.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider4.Icon")));
+            // 
+            // errorProvider5
+            // 
+            this.errorProvider5.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider5.ContainerControl = this;
+            this.errorProvider5.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider5.Icon")));
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,6 +513,11 @@
             this.Text = "Sign Up For SportsGalaxy!";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -497,5 +547,10 @@
         private ReaLTaiizor.Controls.SkyLabel skyLabel8;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private ReaLTaiizor.Controls.SkyLabel errorLbl;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProvider3;
+        private System.Windows.Forms.ErrorProvider errorProvider4;
+        private System.Windows.Forms.ErrorProvider errorProvider5;
     }
 }

@@ -33,8 +33,10 @@ namespace SportsGalaxy
             // Apply to your controls
             label1.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
             label2.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
-            label3.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
+            label3.Font = new Font(pfc.Families[0], 12, FontStyle.Regular);
             newPasswdTxtBox.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
+            closeLinkLbl.Font = new Font(pfc.Families[0], 8, FontStyle.Bold);
+            resetBtn.Font = new Font(pfc.Families[0], 8, FontStyle.Bold);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -74,6 +76,12 @@ namespace SportsGalaxy
                 string updateQuery = "UPDATE [User] SET password = @Password WHERE email = @Email";
                 using (SqlCommand cmd = new SqlCommand(updateQuery, conn))
                 {
+                    if (string.IsNullOrWhiteSpace(newPasswdTxtBox.Text))
+                    {
+                        MessageBox.Show("Please enter a new password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
                     cmd.Parameters.AddWithValue("@Password", BCrypt.Net.BCrypt.HashPassword(newPasswdTxtBox.Text));
                     cmd.Parameters.AddWithValue("@Email", this.email);
                     int rowsAffected = cmd.ExecuteNonQuery();

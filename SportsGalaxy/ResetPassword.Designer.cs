@@ -33,7 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.newPasswdTxtBox = new System.Windows.Forms.TextBox();
             this.resetBtn = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.closeLinkLbl = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -78,7 +78,7 @@
             // 
             this.resetBtn.Image = global::SportsGalaxy.Properties.Resources.undo;
             this.resetBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.resetBtn.Location = new System.Drawing.Point(134, 168);
+            this.resetBtn.Location = new System.Drawing.Point(128, 157);
             this.resetBtn.Name = "resetBtn";
             this.resetBtn.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.resetBtn.Size = new System.Drawing.Size(89, 35);
@@ -88,21 +88,21 @@
             this.resetBtn.UseVisualStyleBackColor = true;
             this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
             // 
-            // linkLabel1
+            // closeLinkLbl
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(163, 213);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(33, 13);
-            this.linkLabel1.TabIndex = 3;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Close";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.closeLinkLbl.AutoSize = true;
+            this.closeLinkLbl.Location = new System.Drawing.Point(155, 209);
+            this.closeLinkLbl.Name = "closeLinkLbl";
+            this.closeLinkLbl.Size = new System.Drawing.Size(33, 13);
+            this.closeLinkLbl.TabIndex = 3;
+            this.closeLinkLbl.TabStop = true;
+            this.closeLinkLbl.Text = "Close";
+            this.closeLinkLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(82, 70);
+            this.label3.Location = new System.Drawing.Point(100, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(23, 13);
             this.label3.TabIndex = 4;
@@ -114,7 +114,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(348, 247);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.closeLinkLbl);
             this.Controls.Add(this.resetBtn);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label1);
@@ -137,7 +137,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button resetBtn;
         private System.Windows.Forms.TextBox newPasswdTxtBox;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel closeLinkLbl;
         private System.Windows.Forms.Label label3;
     }
 }

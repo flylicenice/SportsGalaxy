@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -13,7 +12,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static ReaLTaiizor.Drawing.Poison.PoisonPaint.ForeColor;
 
 namespace SportsGalaxy
 {
@@ -49,17 +47,17 @@ namespace SportsGalaxy
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            string selectQuery = "SELECT * FROM [User] WHERE user_name = @Username";
+            string selectQuery = "SELECT * FROM User WHERE user_name = @Username";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (MySqlConnection connection = new MySqlConnection(connectionStringSql))
             {
-                using (SqlCommand command = new SqlCommand(selectQuery, connection))
+                using (MySqlCommand command = new MySqlCommand(selectQuery, connection))
                 {
                     command.Parameters.AddWithValue("@Username", userNameTxtBox.Text);
                     try
                     {
                         connection.Open();
-                        SqlDataReader reader = command.ExecuteReader();
+                        MySqlDataReader reader = command.ExecuteReader();
                         if (reader.Read())
                         {
                             string storedHash = reader["password"].ToString();
@@ -143,6 +141,11 @@ namespace SportsGalaxy
             signUpLink.Font = new Font(pfc.Families[0], 9, FontStyle.Bold);
             forgotPasswdLink.Font = new Font(pfc.Families[0], 9, FontStyle.Bold);
             closeLinkLbl.Font = new Font(pfc.Families[0], 9, FontStyle.Bold);
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace SportsGalaxy
 {
@@ -17,6 +18,7 @@ namespace SportsGalaxy
     {
         private string email;
         private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\oknev\source\repos\SportsGalaxy\SportsGalaxy\Database.mdf;Integrated Security=True";
+        private string connectionStringSql = @"Server=localhost;Database=sports_galaxy;Uid=root;Pwd=12345678;";
         PrivateFontCollection pfc = new PrivateFontCollection();
         public ResetPassword(string email)
         {
@@ -46,11 +48,11 @@ namespace SportsGalaxy
 
         private void ResetPassword_Load(object sender, EventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (MySqlConnection conn = new MySqlConnection(connectionStringSql))
             {
                 conn.Open();
-                string selectQuery = "SELECT user_name FROM [User] WHERE email = @Email";
-                using (SqlCommand cmd = new SqlCommand(selectQuery, conn))
+                string selectQuery = "SELECT user_name FROM User WHERE email = @Email";
+                using (MySqlCommand cmd = new MySqlCommand(selectQuery, conn))
                 {
                     cmd.Parameters.AddWithValue("@Email", this.email);
                     object result = cmd.ExecuteScalar();
@@ -70,11 +72,11 @@ namespace SportsGalaxy
 
         private void resetBtn_Click(object sender, EventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (MySqlConnection conn = new MySqlConnection(connectionStringSql))
             {
                 conn.Open();
-                string updateQuery = "UPDATE [User] SET password = @Password WHERE email = @Email";
-                using (SqlCommand cmd = new SqlCommand(updateQuery, conn))
+                string updateQuery = "UPDATE User SET password = @Password WHERE email = @Email";
+                using (MySqlCommand cmd = new MySqlCommand(updateQuery, conn))
                 {
                     if (string.IsNullOrWhiteSpace(newPasswdTxtBox.Text))
                     {

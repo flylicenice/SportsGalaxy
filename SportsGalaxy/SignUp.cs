@@ -34,7 +34,7 @@ namespace SportsGalaxy
 
         private void signUpBtn_Click(object sender, EventArgs e)
         {
-            string insertQuery = "INSERT INTO [User] (user_id, user_name, password, email, created_at, phone_number, full_name, gender, matric_no) VALUES (@user_id, @user_name, @password, @email, @created_at, @phone_number, @full_name, @gender, @matric_no)";
+            string insertQuery = "INSERT INTO User (user_id, user_name, password, email, created_at, phone_number, full_name, gender, matric_no) VALUES (@user_id, @user_name, @password, @email, @created_at, @phone_number, @full_name, @gender, @matric_no)";
 
             if (passwordTxtBox.Text != confirmPassTxtBox.Text)
             {
@@ -49,9 +49,9 @@ namespace SportsGalaxy
             } 
 
             //Initialize connection and command 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (MySqlConnection connection = new MySqlConnection(connectionStringSql))
             {
-                using (SqlCommand command = new SqlCommand(insertQuery, connection))
+                using (MySqlCommand command = new MySqlCommand(insertQuery, connection))
                 { 
                     command.Parameters.AddWithValue("@user_id", userID);
                     command.Parameters.AddWithValue("@user_name", userNameTxtBox.Text);
@@ -67,7 +67,7 @@ namespace SportsGalaxy
                     {
                         connection.Open();
 
-                        int insertedRow = command.ExecuteNonQuery();
+                        long insertedRow = command.ExecuteNonQuery();
 
                         if (insertedRow > 0)
                         {
@@ -126,17 +126,17 @@ namespace SportsGalaxy
 
         private void userNameTxtBox_Validating(object sender, CancelEventArgs e)
         {
-            int userCount = 0;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            long userCount = 0;
+            using (MySqlConnection connection = new MySqlConnection(connectionStringSql))
             {
-                using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM [User] WHERE user_name = @user_name", connection))
+                using (MySqlCommand command = new MySqlCommand("SELECT COUNT(*) FROM User WHERE user_name = @user_name", connection))
                 {
                     command.Parameters.AddWithValue("@user_name", userNameTxtBox.Text);
 
                     try
                     {
                         connection.Open();
-                        userCount = (int)command.ExecuteScalar();
+                        userCount = (long)command.ExecuteScalar();
                     }
                     catch (Exception ex)
                     {
@@ -178,17 +178,17 @@ namespace SportsGalaxy
 
         private void emailTxtBox_Validating(object sender, CancelEventArgs e)
         {
-            int userCount = 0;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            long userCount = 0;
+            using (MySqlConnection connection = new MySqlConnection(connectionStringSql))
             {
-                using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM [User] WHERE email = @email", connection))
+                using (MySqlCommand command = new MySqlCommand("SELECT COUNT(*) FROM User WHERE email = @email", connection))
                 {
                     command.Parameters.AddWithValue("@email", emailTxtBox.Text);
 
                     try
                     {
                         connection.Open();
-                        userCount = (int)command.ExecuteScalar();
+                        userCount = (long)command.ExecuteScalar();
                     }
                     catch (Exception ex)
                     {
@@ -216,17 +216,17 @@ namespace SportsGalaxy
 
         private void matricNoTxtBox_Validating(object sender, CancelEventArgs e)
         {
-            int userCount = 0;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            long userCount = 0;
+            using (MySqlConnection connection = new MySqlConnection(connectionStringSql))
             {
-                using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM [User] WHERE matric_no = @matricNo", connection))
+                using (MySqlCommand command = new MySqlCommand("SELECT COUNT(*) FROM User WHERE matric_no = @matricNo", connection))
                 {
                     command.Parameters.AddWithValue("@matricNo", matricNoTxtBox.Text);
 
                     try
                     {
                         connection.Open();
-                        userCount = (int)command.ExecuteScalar();
+                        userCount = (long)command.ExecuteScalar();
                     }
                     catch (Exception ex)
                     {

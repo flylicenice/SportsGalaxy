@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace SportsGalaxy
 {
@@ -18,6 +19,7 @@ namespace SportsGalaxy
     {
         private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\oknev\source\repos\SportsGalaxy\SportsGalaxy\Database.mdf;Integrated Security=True";
         PrivateFontCollection pfc = new PrivateFontCollection();
+        private string connectionStringSql = @"Server=localhost;Database=sports_galaxy;Uid=root;Pwd=12345678;";
         public ForgetPassword()
         {
             InitializeComponent();
@@ -57,9 +59,9 @@ namespace SportsGalaxy
 
         private void emailTxtBox_Validating(object sender, CancelEventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (MySqlConnection conn = new MySqlConnection(connectionStringSql))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM [User] WHERE email = @Email", conn))
+                using (MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM User WHERE email = @Email", conn))
                 {
                     cmd.Parameters.AddWithValue("@Email", emailTxtBox.Text);
                     try

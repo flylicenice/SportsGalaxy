@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace SportsGalaxy
     {
         PrivateFontCollection pfc = new PrivateFontCollection();
         private string connectionStringSql = @"Server=localhost;Database=sports_galaxy;Uid=root;Pwd=12345678;";
-        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\oknev\source\repos\SportsGalaxy\SportsGalaxy\Database.mdf;Integrated Security=True";
+        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
         public Login()
         {
             InitializeComponent();
@@ -47,17 +48,17 @@ namespace SportsGalaxy
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            string selectQuery = "SELECT * FROM User WHERE user_name = @Username";
+            string selectQuery = "SELECT * FROM [User] WHERE user_name = @Username";
 
-            using (MySqlConnection connection = new MySqlConnection(connectionStringSql))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (MySqlCommand command = new MySqlCommand(selectQuery, connection))
+                using (SqlCommand command = new SqlCommand(selectQuery, connection))
                 {
                     command.Parameters.AddWithValue("@Username", userNameTxtBox.Text);
                     try
                     {
                         connection.Open();
-                        MySqlDataReader reader = command.ExecuteReader();
+                        SqlDataReader reader = command.ExecuteReader();
                         if (reader.Read())
                         {
                             string storedHash = reader["password"].ToString();
@@ -141,11 +142,6 @@ namespace SportsGalaxy
             signUpLink.Font = new Font(pfc.Families[0], 9, FontStyle.Bold);
             forgotPasswdLink.Font = new Font(pfc.Families[0], 9, FontStyle.Bold);
             closeLinkLbl.Font = new Font(pfc.Families[0], 9, FontStyle.Bold);
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

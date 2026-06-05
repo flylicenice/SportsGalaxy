@@ -17,7 +17,7 @@ namespace SportsGalaxy
 {
     public partial class ForgetPassword : Form
     {
-        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\oknev\source\repos\SportsGalaxy\SportsGalaxy\Database.mdf;Integrated Security=True";
+        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
         PrivateFontCollection pfc = new PrivateFontCollection();
         private string connectionStringSql = @"Server=localhost;Database=sports_galaxy;Uid=root;Pwd=12345678;";
         public ForgetPassword()
@@ -59,9 +59,9 @@ namespace SportsGalaxy
 
         private void emailTxtBox_Validating(object sender, CancelEventArgs e)
         {
-            using (MySqlConnection conn = new MySqlConnection(connectionStringSql))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                using (MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM User WHERE email = @Email", conn))
+                using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM [User] WHERE email = @Email", conn))
                 {
                     cmd.Parameters.AddWithValue("@Email", emailTxtBox.Text);
                     try

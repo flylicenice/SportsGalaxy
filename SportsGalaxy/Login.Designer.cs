@@ -209,7 +209,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome to SportsGalaxy!";
             this.TransparencyKey = System.Drawing.Color.Purple;
-            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

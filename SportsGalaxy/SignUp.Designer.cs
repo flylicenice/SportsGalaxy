@@ -106,6 +106,7 @@
             this.userNameTxtBox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.userNameTxtBox.UnknownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.userNameTxtBox.UseSystemPasswordChar = false;
+            this.userNameTxtBox.Click += new System.EventHandler(this.userNameTxtBox_Click);
             this.userNameTxtBox.Validating += new System.ComponentModel.CancelEventHandler(this.userNameTxtBox_Validating);
             // 
             // skyLabel2

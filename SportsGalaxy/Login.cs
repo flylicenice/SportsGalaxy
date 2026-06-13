@@ -19,7 +19,6 @@ namespace SportsGalaxy
     public partial class Login : Form
     {
         PrivateFontCollection pfc = new PrivateFontCollection();
-        private string connectionStringSql = @"Server=localhost;Database=sports_galaxy;Uid=root;Pwd=12345678;";
         private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
         public Login()
         {

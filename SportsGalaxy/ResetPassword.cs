@@ -17,7 +17,6 @@ namespace SportsGalaxy
     public partial class ResetPassword : Form
     {
         private string email;
-        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\oknev\source\repos\SportsGalaxy\SportsGalaxy\Database.mdf;Integrated Security=True";
         private string connectionStringSql = @"Server=localhost;Database=sports_galaxy;Uid=root;Pwd=12345678;";
         PrivateFontCollection pfc = new PrivateFontCollection();
         public ResetPassword(string email)

@@ -64,7 +64,7 @@ namespace SportsGalaxy
                             if (BCrypt.Net.BCrypt.Verify(passwordTxtBox.Text, storedHash))
                             {
                                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                Main_Page main = new Main_Page();
+                                Main_Page main = new Main_Page(reader["user_id"].ToString());
                                 this.Hide();
                                 main.ShowDialog();
                                 this.Show();

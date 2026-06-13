@@ -206,11 +206,29 @@
     <Compile Include="CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="EventBlock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EventBlock.Designer.cs">
+      <DependentUpon>EventBlock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="eventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="eventForm.Designer.cs">
+      <DependentUpon>eventForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ForgetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ForgetPassword.Designer.cs">
       <DependentUpon>ForgetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JoinEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JoinEvent.Designer.cs">
+      <DependentUpon>JoinEvent.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -241,8 +259,17 @@
     <EmbeddedResource Include="AddEvent.resx">
       <DependentUpon>AddEvent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EventBlock.resx">
+      <DependentUpon>EventBlock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eventForm.resx">
+      <DependentUpon>eventForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ForgetPassword.resx">
       <DependentUpon>ForgetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JoinEvent.resx">
+      <DependentUpon>JoinEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -294,6 +321,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\calendar.png" />
     <None Include="Resources\undo.png" />
     <None Include="Resources\arrow-right.png" />
     <None Include="Resources\angry.png" />

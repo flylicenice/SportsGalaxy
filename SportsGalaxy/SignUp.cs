@@ -17,7 +17,6 @@ namespace SportsGalaxy
 {
     public partial class SignUp : Form
     {
-        PrivateFontCollection pfc = new PrivateFontCollection();
         private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
         string userID = Guid.NewGuid().ToString();
         public SignUp()
@@ -260,11 +259,6 @@ namespace SportsGalaxy
                 e.Cancel = false;
                 errorProvider5.SetError(phoneNoTextBox, "");
             }
-        }
-
-        private void userNameTxtBox_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -15,10 +15,12 @@ namespace SportsGalaxy
     public partial class AddEvent : Form
     {
         string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
-        public AddEvent()
+        string currentUserID;
+        public AddEvent(string userID)
         {
             InitializeComponent();
             LoadCustomFont();
+            currentUserID = userID;
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -30,7 +32,6 @@ namespace SportsGalaxy
         {
             // Apply to your controls
             titleLbl.Font = CustomFonts.TitleFont;
-            addButton.Font = CustomFonts.BodyFont;
             startDate.Font = CustomFonts.BodyFont;
             startTime.Font = CustomFonts.BodyFont;
             nameLbl.Font = CustomFonts.BodyFont;
@@ -87,23 +88,26 @@ namespace SportsGalaxy
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO [Event] (EventName, EventDate, Location, Description, MaxAttendees) VALUES (@name, @date, @location, @desc, @attendees)", conn))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO [Event] (EventName, EventDate, EventTime, Location, Description, MaxAttendees, user_id) VALUES (@name, @date, @time, @location, @desc, @attendees, @userID)", conn))
                 {
                     try
                     {
                         conn.Open();
                         cmd.Parameters.AddWithValue("@name", nameTxtBox.Text);
                         cmd.Parameters.AddWithValue("@date", startDate.Value.Date);
+                        cmd.Parameters.AddWithValue("@time", startTime.Value.ToShortTimeString());
                         cmd.Parameters.AddWithValue("@location", locationComboBx.SelectedItem?.ToString());
                         cmd.Parameters.AddWithValue("@desc", descTxtBox.Text);
                         cmd.Parameters.AddWithValue("@attendees", attendeesBox.Value);
+                        cmd.Parameters.AddWithValue("@userID", currentUserID);
 
                         int rowsInserted = cmd.ExecuteNonQuery();
 
                         if (rowsInserted > 0)
                         {
                             MessageBox.Show("Event added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Close();
+                            this.Hide();
+                            clearTxtBox();
                         }
                     }
                     catch (Exception ex)
@@ -112,6 +116,21 @@ namespace SportsGalaxy
                     }
                 }
             }
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            clearTxtBox();
+            this.Hide();
+        }
+
+        private void clearTxtBox()
+        {
+            nameTxtBox.Text = "";
+            descTxtBox.Text = "";
+            locationComboBx.SelectedIndex = -1;
+            attendeesBox.Value = 1;
+            startDate.Value = DateTime.Now;
         }
     }
 }

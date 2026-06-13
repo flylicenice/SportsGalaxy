@@ -44,6 +44,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.attendeesBox = new ReaLTaiizor.Controls.SkyNumeric();
+            this.backBtn = new ReaLTaiizor.Controls.SkyButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +79,7 @@
             this.addButton.HoverBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(25)))), ((int)(((byte)(73)))), ((int)(((byte)(109)))));
             this.addButton.HoverForeColor = System.Drawing.Color.White;
             this.addButton.HoverShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.addButton.Location = new System.Drawing.Point(346, 402);
+            this.addButton.Location = new System.Drawing.Point(317, 405);
             this.addButton.Name = "addButton";
             this.addButton.NormalBGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.addButton.NormalBGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
@@ -164,8 +165,7 @@
             this.locationComboBx.ItemHeight = 16;
             this.locationComboBx.ItemHighlightColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(176)))), ((int)(((byte)(214)))));
             this.locationComboBx.Items.AddRange(new object[] {
-            "Boys Gym",
-            "Girls Gym",
+            "Gym",
             "Badminton Court",
             "Football Field",
             "Netball Court",
@@ -258,11 +258,50 @@
             this.attendeesBox.TopTriangleColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
             this.attendeesBox.Value = ((long)(20));
             // 
+            // backBtn
+            // 
+            this.backBtn.BackColor = System.Drawing.Color.Transparent;
+            this.backBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backBtn.DownBGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(153)))), ((int)(((byte)(205)))));
+            this.backBtn.DownBGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(124)))), ((int)(((byte)(170)))));
+            this.backBtn.DownBorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
+            this.backBtn.DownBorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(149)))), ((int)(((byte)(194)))));
+            this.backBtn.DownBorderColorC = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(93)))), ((int)(((byte)(131)))));
+            this.backBtn.DownBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(25)))), ((int)(((byte)(73)))), ((int)(((byte)(109)))));
+            this.backBtn.DownForeColor = System.Drawing.Color.White;
+            this.backBtn.DownShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.backBtn.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold);
+            this.backBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
+            this.backBtn.HoverBGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(153)))), ((int)(((byte)(205)))));
+            this.backBtn.HoverBGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(124)))), ((int)(((byte)(170)))));
+            this.backBtn.HoverBorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
+            this.backBtn.HoverBorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(149)))), ((int)(((byte)(194)))));
+            this.backBtn.HoverBorderColorC = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(93)))), ((int)(((byte)(131)))));
+            this.backBtn.HoverBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(25)))), ((int)(((byte)(73)))), ((int)(((byte)(109)))));
+            this.backBtn.HoverForeColor = System.Drawing.Color.White;
+            this.backBtn.HoverShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.backBtn.Location = new System.Drawing.Point(440, 405);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.NormalBGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.backBtn.NormalBGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.backBtn.NormalBorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.backBtn.NormalBorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.backBtn.NormalBorderColorC = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.backBtn.NormalBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
+            this.backBtn.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
+            this.backBtn.NormalShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.backBtn.Size = new System.Drawing.Size(99, 42);
+            this.backBtn.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.backBtn.TabIndex = 15;
+            this.backBtn.Text = "Back";
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            // 
             // AddEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.backBtn);
             this.Controls.Add(this.attendeesBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.timeLbl);
@@ -303,5 +342,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label label1;
         private ReaLTaiizor.Controls.SkyNumeric attendeesBox;
+        private ReaLTaiizor.Controls.SkyButton backBtn;
     }
 }

@@ -30,10 +30,11 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.startLinkLbl = new System.Windows.Forms.LinkLabel();
             this.subredditTreeView = new ReaLTaiizor.Controls.ForeverTreeView();
             this.nightPanel1 = new ReaLTaiizor.Controls.NightPanel();
             this.title = new System.Windows.Forms.Label();
+            this.joinLinkLbl = new System.Windows.Forms.LinkLabel();
+            this.startLinkLbl = new System.Windows.Forms.LinkLabel();
             this.logOutLinkLbl = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -73,6 +74,7 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+            this.splitContainer2.Panel1.Controls.Add(this.joinLinkLbl);
             this.splitContainer2.Panel1.Controls.Add(this.startLinkLbl);
             // 
             // splitContainer2.Panel2
@@ -82,26 +84,6 @@
             this.splitContainer2.SplitterDistance = 267;
             this.splitContainer2.SplitterWidth = 1;
             this.splitContainer2.TabIndex = 2;
-            // 
-            // startLinkLbl
-            // 
-            this.startLinkLbl.AutoSize = true;
-            this.startLinkLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-            this.startLinkLbl.Font = new System.Drawing.Font("Microsoft Himalaya", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startLinkLbl.ForeColor = System.Drawing.Color.Transparent;
-            this.startLinkLbl.Image = global::SportsGalaxy.Properties.Resources.angry;
-            this.startLinkLbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.startLinkLbl.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.startLinkLbl.LinkColor = System.Drawing.Color.Wheat;
-            this.startLinkLbl.Location = new System.Drawing.Point(33, 18);
-            this.startLinkLbl.Name = "startLinkLbl";
-            this.startLinkLbl.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.startLinkLbl.Size = new System.Drawing.Size(149, 27);
-            this.startLinkLbl.TabIndex = 1;
-            this.startLinkLbl.TabStop = true;
-            this.startLinkLbl.Text = "Start an Event";
-            this.startLinkLbl.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.startLinkLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.startLinkLbl_LinkClicked);
             // 
             // subredditTreeView
             // 
@@ -141,6 +123,46 @@
             this.title.TabIndex = 1;
             this.title.Text = "SportsGalaxy";
             // 
+            // joinLinkLbl
+            // 
+            this.joinLinkLbl.AutoSize = true;
+            this.joinLinkLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+            this.joinLinkLbl.Font = new System.Drawing.Font("Microsoft Himalaya", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.joinLinkLbl.ForeColor = System.Drawing.Color.Transparent;
+            this.joinLinkLbl.Image = global::SportsGalaxy.Properties.Resources.calendar;
+            this.joinLinkLbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.joinLinkLbl.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.joinLinkLbl.LinkColor = System.Drawing.Color.Wheat;
+            this.joinLinkLbl.Location = new System.Drawing.Point(33, 71);
+            this.joinLinkLbl.Name = "joinLinkLbl";
+            this.joinLinkLbl.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.joinLinkLbl.Size = new System.Drawing.Size(149, 27);
+            this.joinLinkLbl.TabIndex = 2;
+            this.joinLinkLbl.TabStop = true;
+            this.joinLinkLbl.Text = "Join An Event";
+            this.joinLinkLbl.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.joinLinkLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.joinLinkLbl_LinkClicked);
+            // 
+            // startLinkLbl
+            // 
+            this.startLinkLbl.AutoSize = true;
+            this.startLinkLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+            this.startLinkLbl.Font = new System.Drawing.Font("Microsoft Himalaya", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startLinkLbl.ForeColor = System.Drawing.Color.Transparent;
+            this.startLinkLbl.Image = global::SportsGalaxy.Properties.Resources.angry;
+            this.startLinkLbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.startLinkLbl.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.startLinkLbl.LinkColor = System.Drawing.Color.Wheat;
+            this.startLinkLbl.Location = new System.Drawing.Point(33, 18);
+            this.startLinkLbl.Name = "startLinkLbl";
+            this.startLinkLbl.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.startLinkLbl.Size = new System.Drawing.Size(149, 27);
+            this.startLinkLbl.TabIndex = 1;
+            this.startLinkLbl.TabStop = true;
+            this.startLinkLbl.Text = "Start an Event";
+            this.startLinkLbl.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.startLinkLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.startLinkLbl_LinkClicked);
+            // 
             // logOutLinkLbl
             // 
             this.logOutLinkLbl.AutoSize = true;
@@ -169,7 +191,7 @@
             this.MinimumSize = new System.Drawing.Size(126, 50);
             this.Name = "Main_Page";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "formTheme1";
+            this.Text = "Home";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.Load += new System.EventHandler(this.Main_Page_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -193,5 +215,6 @@
         private ReaLTaiizor.Controls.NightPanel nightPanel1;
         private System.Windows.Forms.LinkLabel logOutLinkLbl;
         private System.Windows.Forms.Label title;
+        private System.Windows.Forms.LinkLabel joinLinkLbl;
     }
 }

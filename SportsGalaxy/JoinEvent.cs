@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace SportsGalaxy
+{
+    public partial class JoinEvent : Form
+    {
+        public JoinEvent(string userid)
+        {
+            InitializeComponent();
+        }
+
+        private void JoinEvent_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

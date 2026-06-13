@@ -14,41 +14,62 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SportsGalaxy
-{
+{ 
     public partial class Main_Page : Form
     {
-        private PrivateFontCollection pfc = new PrivateFontCollection();
-        private string connectionStringSql = @"Server=localhost;Database=sports_galaxy;Uid=root;Pwd=12345678;";
-        public Main_Page()
+        private AddEvent addEventForm;
+        private eventForm eventForm;
+        string currentUserID;
+        public Main_Page(string userID)
         {
             InitializeComponent();
             LoadCustomFont();
-        }
-
-        private void Main_Page_Load(object sender, EventArgs e)
-        {
-
+            currentUserID = userID;
         }
 
         private void LoadCustomFont()
         {
-            pfc.AddFontFile(@"Fonts\PixelifySans-Regular.ttf");
-            pfc.AddFontFile(@"Fonts\PixelifySans-Bold.ttf");
-
             // Apply to your controls
-            title.Font = new Font(pfc.Families[0], 24, FontStyle.Bold);
-            startLinkLbl.Font = new Font(pfc.Families[0], 12, FontStyle.Regular);
-            logOutLinkLbl.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
+            title.Font = CustomFonts.TitleFont;
+            startLinkLbl.Font = CustomFonts.BodyFont;
+            logOutLinkLbl.Font = CustomFonts.SmallFont;
+            joinLinkLbl.Font = CustomFonts.BodyFont;
         }
 
         private void startLinkLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+            eventForm.Hide();
+            addEventForm.Show();
+            addEventForm.BringToFront();
         }
 
         private void logOutLinkLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Main_Page_Load(object sender, EventArgs e)
+        {   
+            addEventForm = new AddEvent(currentUserID);
+            addEventForm.TopLevel = false;
+            addEventForm.Dock = DockStyle.Fill;
+            splitContainer1.Panel2.Controls.Add(addEventForm);
+            addEventForm.Parent = splitContainer1.Panel2;
+            addEventForm.Hide();
+
+            eventForm = new eventForm(currentUserID);
+            eventForm.TopLevel = false;
+            eventForm.Dock = DockStyle.Fill;
+            splitContainer1.Panel2.Controls.Add(eventForm);
+            eventForm.Parent = splitContainer1.Panel2;
+            eventForm.Show();
+        }
+
+        private void joinLinkLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            addEventForm.Hide();
+            eventForm.Show();
+            eventForm.BringToFront();
         }
     }
 }

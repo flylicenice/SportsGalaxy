@@ -19,7 +19,6 @@ namespace SportsGalaxy
     public partial class Login : Form
     {
         PrivateFontCollection pfc = new PrivateFontCollection();
-        private string connectionStringSql = @"Server=localhost;Database=sports_galaxy;Uid=root;Pwd=12345678;";
         private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
         public Login()
         {
@@ -65,7 +64,7 @@ namespace SportsGalaxy
                             if (BCrypt.Net.BCrypt.Verify(passwordTxtBox.Text, storedHash))
                             {
                                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                Main_Page main = new Main_Page();
+                                Main_Page main = new Main_Page(reader["user_id"].ToString());
                                 this.Hide();
                                 main.ShowDialog();
                                 this.Show();

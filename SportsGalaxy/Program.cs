@@ -13,6 +13,7 @@ namespace SportsGalaxy
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(true);
+            CustomFonts.Initialize();
             Application.Run(new Login());
         }
     }

@@ -17,8 +17,6 @@ namespace SportsGalaxy
 {
     public partial class SignUp : Form
     {
-        PrivateFontCollection pfc = new PrivateFontCollection();
-        private string connectionStringSql = @"Server=localhost;Database=sports_galaxy;Uid=root;Pwd=12345678;";
         private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
         string userID = Guid.NewGuid().ToString();
         public SignUp()
@@ -100,28 +98,25 @@ namespace SportsGalaxy
 
         private void LoadCustomFont()
         {
-            pfc.AddFontFile(@"Fonts\PixelifySans-Regular.ttf");
-            pfc.AddFontFile(@"Fonts\PixelifySans-Bold.ttf");
-
             // Apply to your controls
-            skyLabel1.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
-            skyLabel2.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
-            skyLabel3.Font = new Font(pfc.Families[0], 28, FontStyle.Bold);
-            skyLabel4.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
-            skyLabel5.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
-            skyLabel6.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
-            skyLabel7.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
-            skyLabel8.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
-            skyLabel9.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
-            errorLbl.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
-            userNameTxtBox.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
-            fullNameTxtBox.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
-            emailTxtBox.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
-            phoneNoTextBox.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
-            matricNoTxtBox.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
-            genderComboBox.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
-            signUpBtn.Font = new Font(pfc.Families[0], 10, FontStyle.Bold);
-            cancelLinkLbl.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
+            skyLabel1.Font = CustomFonts.BodyFont;
+            skyLabel2.Font = CustomFonts.BodyFont;
+            skyLabel3.Font = CustomFonts.TitleFont;
+            skyLabel4.Font = CustomFonts.BodyFont;
+            skyLabel5.Font = CustomFonts.BodyFont;
+            skyLabel6.Font = CustomFonts.BodyFont;
+            skyLabel7.Font = CustomFonts.BodyFont;
+            skyLabel8.Font = CustomFonts.BodyFont;
+            skyLabel9.Font = CustomFonts.BodyFont;
+            errorLbl.Font = CustomFonts.BodyFont;
+            userNameTxtBox.Font = CustomFonts.SmallFont;
+            fullNameTxtBox.Font = CustomFonts.SmallFont;
+            emailTxtBox.Font = CustomFonts.SmallFont;
+            phoneNoTextBox.Font = CustomFonts.SmallFont;
+            matricNoTxtBox.Font = CustomFonts.SmallFont;
+            genderComboBox.Font = CustomFonts.SmallFont;
+            signUpBtn.Font = CustomFonts.BodyFont;
+            cancelLinkLbl.Font = CustomFonts.SmallFont;
         }
 
         private void userNameTxtBox_Validating(object sender, CancelEventArgs e)

@@ -97,6 +97,7 @@
             // 
             // startDate
             // 
+            this.startDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.startDate.Location = new System.Drawing.Point(440, 112);
             this.startDate.Name = "startDate";
             this.startDate.Size = new System.Drawing.Size(313, 20);
@@ -249,14 +250,14 @@
             this.attendeesBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
             this.attendeesBox.Location = new System.Drawing.Point(440, 255);
             this.attendeesBox.Maximum = ((long)(100));
-            this.attendeesBox.Minimum = ((long)(20));
+            this.attendeesBox.Minimum = ((long)(5));
             this.attendeesBox.Name = "attendeesBox";
             this.attendeesBox.Size = new System.Drawing.Size(75, 30);
             this.attendeesBox.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.attendeesBox.TabIndex = 14;
             this.attendeesBox.Text = "skyNumeric1";
             this.attendeesBox.TopTriangleColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
-            this.attendeesBox.Value = ((long)(20));
+            this.attendeesBox.Value = ((long)(5));
             // 
             // backBtn
             // 

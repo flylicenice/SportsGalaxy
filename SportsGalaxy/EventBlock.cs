@@ -13,6 +13,8 @@ namespace SportsGalaxy
 {
     public partial class EventBlock : UserControl
     {
+        string eventName, location, eventDate, eventTime, eventDesc;
+        int current, max, eventid;
         private string userid;
 
         public EventBlock(string userid)
@@ -22,13 +24,15 @@ namespace SportsGalaxy
             loadCustomFont();
         }
 
-        public void FillData(string name, string location, string date, string time, int current, int max)
+        public void FillData(string name, int eventid, string location, string date, string time, string desc, int current, int max)
         {
             nameLbl.Text = name;
             locationLbl.Text = location;
             dateLbl.Text = date;
             timeLbl.Text = time;
             maxLabel.Text = $"Slots: {current} / {max}";
+
+            this.eventid = eventid;  eventName = name; this.location = location; eventDate = date; eventTime = time; this.eventDesc = desc; this.current = current; this.max = max;
 
             if (current >= max)
             {
@@ -40,7 +44,7 @@ namespace SportsGalaxy
 
         private void joinBtn_Click(object sender, EventArgs e)
         {
-            JoinEvent joinForm = new JoinEvent(userid);
+            JoinEvent joinForm = new JoinEvent(userid, eventid, eventName, eventDate, eventTime, eventDesc, location, current, max);
             joinForm.ShowDialog();
         }
 
@@ -57,14 +61,14 @@ namespace SportsGalaxy
         { 
             if (location == "Gym")
             {
-                pictureBox.Image = Properties.Resources.football;
+                pictureBox.Image = Properties.Resources.dumbell;
             }
             else if (location == "Football Field")
             {
                 pictureBox.Image = Properties.Resources.football;
             } else if (location == "Basketball Court")
             {
-                pictureBox.Image = Properties.Resources.football;
+                pictureBox.Image = Properties.Resources.basketball;
             } else if (location == "Badminton Court")
             {
                 pictureBox.Image = Properties.Resources.football;
@@ -72,6 +76,12 @@ namespace SportsGalaxy
             {
                 pictureBox.Image = Properties.Resources.football;
             }
+        }
+
+        public void disableJoinBtn()
+        {
+            joinBtn.Enabled = false;
+            joinBtn.Text = "Full";
         }
     }
 }

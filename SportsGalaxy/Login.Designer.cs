@@ -37,6 +37,7 @@
             this.passwordTxtBox = new ReaLTaiizor.Controls.SkyTextBox();
             this.loginBtnToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.forgotPasswdLink = new System.Windows.Forms.LinkLabel();
+            this.adminLinkLbl = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // closeLinkLbl
@@ -188,6 +189,23 @@
             this.forgotPasswdLink.Text = "Forgot Password?";
             this.forgotPasswdLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.forgotPasswdLink_LinkClicked);
             // 
+            // adminLinkLbl
+            // 
+            this.adminLinkLbl.ActiveLinkColor = System.Drawing.Color.Purple;
+            this.adminLinkLbl.AutoSize = true;
+            this.adminLinkLbl.BackColor = System.Drawing.Color.Transparent;
+            this.adminLinkLbl.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminLinkLbl.ForeColor = System.Drawing.Color.LightGray;
+            this.adminLinkLbl.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.adminLinkLbl.LinkColor = System.Drawing.Color.Transparent;
+            this.adminLinkLbl.Location = new System.Drawing.Point(964, 565);
+            this.adminLinkLbl.Name = "adminLinkLbl";
+            this.adminLinkLbl.Size = new System.Drawing.Size(42, 16);
+            this.adminLinkLbl.TabIndex = 13;
+            this.adminLinkLbl.TabStop = true;
+            this.adminLinkLbl.Text = "Admin";
+            this.adminLinkLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.adminLinkLbl_LinkClicked);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,6 +214,7 @@
             this.BackgroundImage = global::SportsGalaxy.Properties.Resources.bg_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1018, 590);
+            this.Controls.Add(this.adminLinkLbl);
             this.Controls.Add(this.forgotPasswdLink);
             this.Controls.Add(this.passwordTxtBox);
             this.Controls.Add(this.userNameTxtBox);
@@ -223,5 +242,6 @@
         private ReaLTaiizor.Controls.SkyTextBox passwordTxtBox;
         private System.Windows.Forms.ToolTip loginBtnToolTip;
         private System.Windows.Forms.LinkLabel forgotPasswdLink;
+        private System.Windows.Forms.LinkLabel adminLinkLbl;
     }
 }

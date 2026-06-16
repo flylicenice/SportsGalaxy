@@ -17,7 +17,7 @@ namespace SportsGalaxy
     public partial class ResetPassword : Form
     {
         private string email;
-        private string connectionStringSql = @"Server=localhost;Database=sports_galaxy;Uid=root;Pwd=12345678;";
+        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
         PrivateFontCollection pfc = new PrivateFontCollection();
         public ResetPassword(string email)
         {
@@ -47,11 +47,11 @@ namespace SportsGalaxy
 
         private void ResetPassword_Load(object sender, EventArgs e)
         {
-            using (MySqlConnection conn = new MySqlConnection(connectionStringSql))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string selectQuery = "SELECT user_name FROM User WHERE email = @Email";
-                using (MySqlCommand cmd = new MySqlCommand(selectQuery, conn))
+                string selectQuery = "SELECT user_name FROM [USER] WHERE email = @Email";
+                using (SqlCommand cmd = new SqlCommand(selectQuery, conn))
                 {
                     cmd.Parameters.AddWithValue("@Email", this.email);
                     object result = cmd.ExecuteScalar();
@@ -71,11 +71,11 @@ namespace SportsGalaxy
 
         private void resetBtn_Click(object sender, EventArgs e)
         {
-            using (MySqlConnection conn = new MySqlConnection(connectionStringSql))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string updateQuery = "UPDATE User SET password = @Password WHERE email = @Email";
-                using (MySqlCommand cmd = new MySqlCommand(updateQuery, conn))
+                string updateQuery = "UPDATE [User] SET password = @Password WHERE email = @Email";
+                using (SqlCommand cmd = new SqlCommand(updateQuery, conn))
                 {
                     if (string.IsNullOrWhiteSpace(newPasswdTxtBox.Text))
                     {

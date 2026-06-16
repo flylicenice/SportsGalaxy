@@ -64,7 +64,7 @@ namespace SportsGalaxy
                             if (BCrypt.Net.BCrypt.Verify(passwordTxtBox.Text, storedHash))
                             {
                                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                Main_Page main = new Main_Page(reader["user_id"].ToString());
+                                Main_Page main = new Main_Page(reader["matric_no"].ToString());
                                 this.Hide();
                                 main.ShowDialog();
                                 this.Show();
@@ -141,6 +141,14 @@ namespace SportsGalaxy
             signUpLink.Font = new Font(pfc.Families[0], 9, FontStyle.Bold);
             forgotPasswdLink.Font = new Font(pfc.Families[0], 9, FontStyle.Bold);
             closeLinkLbl.Font = new Font(pfc.Families[0], 9, FontStyle.Bold);
+        }
+
+        private void adminLinkLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AdminLoginForm adminLoginForm = new AdminLoginForm();
+            this.Hide();
+            adminLoginForm.ShowDialog();
+            this.Show();
         }
     }
 }

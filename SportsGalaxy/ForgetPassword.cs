@@ -45,15 +45,11 @@ namespace SportsGalaxy
         }
         private void LoadCustomFont()
         {
-            pfc.AddFontFile(@"Fonts\PixelifySans-Regular.ttf");
-            pfc.AddFontFile(@"Fonts\PixelifySans-Bold.ttf");
-
-            // Apply to your controls
-            label1.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
-            label2.Font = new Font(pfc.Families[0], 16, FontStyle.Regular);
-            emailTxtBox.Font = new Font(pfc.Families[0], 12, FontStyle.Regular);
-            resetBtn.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
-            backLinkLbl.Font = new Font(pfc.Families[0], 8, FontStyle.Bold);
+            label1.Font = CustomFonts.TitleFont;
+            label2.Font = CustomFonts.BodyFont;
+            emailTxtBox.Font = CustomFonts.SmallFont;
+            resetBtn.Font = CustomFonts.SmallFont;
+            backLinkLbl.Font = CustomFonts.SmallFont;
         }
 
         private void emailTxtBox_Validating(object sender, CancelEventArgs e)

@@ -18,7 +18,6 @@ namespace SportsGalaxy
     public partial class SignUp : Form
     {
         private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
-        string userID = Guid.NewGuid().ToString();
         public SignUp()
         {
             InitializeComponent();
@@ -32,7 +31,7 @@ namespace SportsGalaxy
 
         private void signUpBtn_Click(object sender, EventArgs e)
         {
-            string insertQuery = "INSERT INTO [User] (user_id, user_name, password, email, created_at, phone_number, full_name, gender, matric_no) VALUES (@user_id, @user_name, @password, @email, @created_at, @phone_number, @full_name, @gender, @matric_no)";
+            string insertQuery = "INSERT INTO [User] (matric_no, user_name, password, email) VALUES (@matric_no, @user_name, @password, @email)";
 
             if (passwordTxtBox.Text != confirmPassTxtBox.Text)
             {
@@ -51,14 +50,9 @@ namespace SportsGalaxy
             {
                 using (SqlCommand command = new SqlCommand(insertQuery, connection))
                 { 
-                    command.Parameters.AddWithValue("@user_id", userID);
                     command.Parameters.AddWithValue("@user_name", userNameTxtBox.Text);
                     command.Parameters.AddWithValue("@password", BCrypt.Net.BCrypt.HashPassword(passwordTxtBox.Text));
                     command.Parameters.AddWithValue("@email", emailTxtBox.Text);
-                    command.Parameters.AddWithValue("@created_at", DateTime.Now);
-                    command.Parameters.AddWithValue("@phone_number", phoneNoTextBox.Text);
-                    command.Parameters.AddWithValue("@full_name", fullNameTxtBox.Text);
-                    command.Parameters.AddWithValue("@gender", genderComboBox.SelectedItem?.ToString() ?? "Not Specified");
                     command.Parameters.AddWithValue("@matric_no", matricNoTxtBox.Text);
                     
                     try
@@ -90,9 +84,6 @@ namespace SportsGalaxy
             passwordTxtBox.Text = "";
             confirmPassTxtBox.Text = "";
             emailTxtBox.Text = "";
-            phoneNoTextBox.Text = "";
-            fullNameTxtBox.Text = "";
-            genderComboBox.SelectedIndex = -1;
             matricNoTxtBox.Text = "";
         }
 
@@ -103,18 +94,13 @@ namespace SportsGalaxy
             skyLabel2.Font = CustomFonts.BodyFont;
             skyLabel3.Font = CustomFonts.TitleFont;
             skyLabel4.Font = CustomFonts.BodyFont;
-            skyLabel5.Font = CustomFonts.BodyFont;
             skyLabel6.Font = CustomFonts.BodyFont;
-            skyLabel7.Font = CustomFonts.BodyFont;
             skyLabel8.Font = CustomFonts.BodyFont;
             skyLabel9.Font = CustomFonts.BodyFont;
             errorLbl.Font = CustomFonts.BodyFont;
             userNameTxtBox.Font = CustomFonts.SmallFont;
-            fullNameTxtBox.Font = CustomFonts.SmallFont;
             emailTxtBox.Font = CustomFonts.SmallFont;
-            phoneNoTextBox.Font = CustomFonts.SmallFont;
             matricNoTxtBox.Font = CustomFonts.SmallFont;
-            genderComboBox.Font = CustomFonts.SmallFont;
             signUpBtn.Font = CustomFonts.BodyFont;
             cancelLinkLbl.Font = CustomFonts.SmallFont;
         }
@@ -154,20 +140,6 @@ namespace SportsGalaxy
             {
                 e.Cancel = false;
                 errorProvider1.SetError(userNameTxtBox, "");
-            }
-        }
-
-        private void fullNameTxtBox_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(fullNameTxtBox.Text))
-            {
-                e.Cancel = true;
-                errorProvider2.SetError(fullNameTxtBox, "Full name is required.");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider2.SetError(fullNameTxtBox, "");
             }
         }
 
@@ -244,20 +216,6 @@ namespace SportsGalaxy
             {
                 e.Cancel = false;
                 errorProvider4.SetError(matricNoTxtBox, "");
-            }
-        }
-
-        private void phoneNoTxtBox_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(phoneNoTextBox.Text))
-            {
-                e.Cancel = true;
-                errorProvider5.SetError(phoneNoTextBox, "Phone number is required.");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider5.SetError(phoneNoTextBox, "");
             }
         }
     }

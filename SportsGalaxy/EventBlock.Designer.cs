@@ -135,6 +135,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Controls.Add(this.joinBtn);
             this.Controls.Add(this.timeLbl);
             this.Controls.Add(this.dateLbl);
@@ -143,7 +144,7 @@
             this.Controls.Add(this.locationLbl);
             this.Controls.Add(this.nameLbl);
             this.Name = "EventBlock";
-            this.Size = new System.Drawing.Size(207, 225);
+            this.Size = new System.Drawing.Size(203, 221);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

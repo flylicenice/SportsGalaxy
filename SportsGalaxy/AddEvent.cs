@@ -15,12 +15,12 @@ namespace SportsGalaxy
     public partial class AddEvent : Form
     {
         string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
-        string currentUserID;
-        public AddEvent(string userID)
+        string currentMatricNo;
+        public AddEvent(string matricNo)
         {
             InitializeComponent();
             LoadCustomFont();
-            currentUserID = userID;
+            currentMatricNo = matricNo;
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -88,7 +88,7 @@ namespace SportsGalaxy
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO [Event] (EventName, EventDate, EventTime, Location, Description, MaxAttendees, user_id) VALUES (@name, @date, @time, @location, @desc, @attendees, @userID)", conn))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO [Event] (EventName, EventDate, EventTime, Location, Description, MaxAttendees, matric_no) VALUES (@name, @date, @time, @location, @desc, @attendees, @matricNo)", conn))
                 {
                     try
                     {
@@ -99,7 +99,7 @@ namespace SportsGalaxy
                         cmd.Parameters.AddWithValue("@location", locationComboBx.SelectedItem?.ToString());
                         cmd.Parameters.AddWithValue("@desc", descTxtBox.Text);
                         cmd.Parameters.AddWithValue("@attendees", attendeesBox.Value);
-                        cmd.Parameters.AddWithValue("@userID", currentUserID);
+                        cmd.Parameters.AddWithValue("@matricNo", currentMatricNo);
 
                         int rowsInserted = cmd.ExecuteNonQuery();
 

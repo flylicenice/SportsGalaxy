@@ -19,8 +19,10 @@ using System.Windows.Media.Animation;
 namespace SportsGalaxy
 {
     public partial class EventBlockHori : UserControl
-    {   
-        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
+    {
+        private static string projectRootFolder = System.IO.Path.GetFullPath(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\"));
+
+        private string connectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Path.Combine(projectRootFolder, "Database.mdf")};Integrated Security=True;";
         string matricNo, eventName, eventLocation, eventDate, eventTime, userEmail;
         int eventId;
 
@@ -107,7 +109,7 @@ namespace SportsGalaxy
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Booking saved, but email dispatch ran into a hitch: " + ex.Message, "Email Alert");
+                    MessageBox.Show("Booking saved, but email got a problem: " + ex.Message, "Email Alert");
                 }
             }
         }
@@ -143,7 +145,7 @@ namespace SportsGalaxy
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Generate Ticket failed.");
+                            MessageBox.Show("Unjoin failed.");
                             return;
                         }
                     }

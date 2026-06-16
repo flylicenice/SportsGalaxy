@@ -17,7 +17,10 @@ namespace SportsGalaxy
 {
     public partial class SignUp : Form
     {
-        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
+        private static string projectRootFolder = System.IO.Path.GetFullPath(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\"));
+
+        private string connectionString2 = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Path.Combine(projectRootFolder, "Database.mdf")};Integrated Security=True;";
+        
         public SignUp()
         {
             InitializeComponent();
@@ -46,7 +49,7 @@ namespace SportsGalaxy
             } 
 
             //Initialize connection and command 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString2))
             {
                 using (SqlCommand command = new SqlCommand(insertQuery, connection))
                 { 
@@ -108,7 +111,7 @@ namespace SportsGalaxy
         private void userNameTxtBox_Validating(object sender, CancelEventArgs e)
         {
             int userCount = 0;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString2))
             {
                 using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM [User] WHERE user_name = @user_name", connection))
                 {
@@ -146,7 +149,7 @@ namespace SportsGalaxy
         private void emailTxtBox_Validating(object sender, CancelEventArgs e)
         {
             int userCount = 0;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString2))
             {
                 using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM [User] WHERE email = @email", connection))
                 {
@@ -184,7 +187,7 @@ namespace SportsGalaxy
         private void matricNoTxtBox_Validating(object sender, CancelEventArgs e)
         {
             int userCount = 0;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString2))
             {
                 using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM [User] WHERE matric_no = @matricNo", connection))
                 {

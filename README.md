@@ -186,3 +186,9 @@ SportsGalaxy uses MailKit to automatically send:
 * Event participation details
 
 This eliminates the need for physical tickets and improves user convenience.
+
+---
+
+## Admin Login Credentials
+
+ID = 1 Password = 1

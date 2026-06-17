@@ -34,7 +34,6 @@
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adminBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sportsGalaxyDataSet = new SportsGalaxy.SportsGalaxyDataSet();
-            this.adminBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.IDTxtBox = new System.Windows.Forms.TextBox();
             this.addBtn = new ReaLTaiizor.Controls.ThunderButton();
@@ -45,7 +44,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.adminDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sportsGalaxyDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // adminDGV
@@ -61,6 +59,7 @@
             this.adminDGV.Name = "adminDGV";
             this.adminDGV.Size = new System.Drawing.Size(282, 197);
             this.adminDGV.TabIndex = 0;
+            this.adminDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adminDGV_CellClick);
             // 
             // adminIdDataGridViewTextBoxColumn
             // 
@@ -84,10 +83,6 @@
             // 
             this.sportsGalaxyDataSet.DataSetName = "SportsGalaxyDataSet";
             this.sportsGalaxyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // adminBindingSource
-            // 
-            this.adminBindingSource.DataMember = "Admin";
             // 
             // label1
             // 
@@ -144,6 +139,7 @@
             this.deleteBtn.Size = new System.Drawing.Size(120, 40);
             this.deleteBtn.TabIndex = 15;
             this.deleteBtn.Text = "Delete";
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // adminTableAdapter1
             // 
@@ -169,7 +165,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.adminDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sportsGalaxyDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,7 +179,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox passwordTxtBox;
         private ReaLTaiizor.Controls.ThunderButton deleteBtn;
-        private System.Windows.Forms.BindingSource adminBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn adminIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private SportsGalaxyDataSet sportsGalaxyDataSet;

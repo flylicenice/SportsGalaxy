@@ -30,14 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.eventDGV = new System.Windows.Forms.DataGridView();
-            this.eventIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eventNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eventDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eventTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maxAttendeesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.matricnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eventBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sportsGalaxyDataSet = new SportsGalaxy.SportsGalaxyDataSet();
             this.eventBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.parrotClock1 = new ReaLTaiizor.Controls.ParrotClock();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,13 +52,21 @@
             this.startTime = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.locationComboBx = new System.Windows.Forms.ComboBox();
-            this.sportsGalaxyDataSet = new SportsGalaxy.SportsGalaxyDataSet();
-            this.eventBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.eventTableAdapter1 = new SportsGalaxy.SportsGalaxyDataSetTableAdapters.EventTableAdapter();
+            this.eventBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.eventIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eventNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eventDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eventTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maxAttendeesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matricnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.eventDGV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sportsGalaxyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sportsGalaxyDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // eventDGV
@@ -82,68 +84,26 @@
             this.descriptionDataGridViewTextBoxColumn,
             this.maxAttendeesDataGridViewTextBoxColumn,
             this.matricnoDataGridViewTextBoxColumn});
-            this.eventDGV.DataSource = this.eventBindingSource1;
+            this.eventDGV.DataSource = this.eventBindingSource2;
             this.eventDGV.Location = new System.Drawing.Point(16, 198);
             this.eventDGV.Name = "eventDGV";
             this.eventDGV.Size = new System.Drawing.Size(753, 288);
             this.eventDGV.TabIndex = 1;
             this.eventDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eventDGV_CellClick);
             // 
-            // eventIdDataGridViewTextBoxColumn
+            // eventBindingSource1
             // 
-            this.eventIdDataGridViewTextBoxColumn.DataPropertyName = "EventId";
-            this.eventIdDataGridViewTextBoxColumn.HeaderText = "EventId";
-            this.eventIdDataGridViewTextBoxColumn.Name = "eventIdDataGridViewTextBoxColumn";
-            this.eventIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.eventBindingSource1.DataMember = "Event";
+            this.eventBindingSource1.DataSource = this.sportsGalaxyDataSet;
             // 
-            // eventNameDataGridViewTextBoxColumn
+            // sportsGalaxyDataSet
             // 
-            this.eventNameDataGridViewTextBoxColumn.DataPropertyName = "EventName";
-            this.eventNameDataGridViewTextBoxColumn.HeaderText = "EventName";
-            this.eventNameDataGridViewTextBoxColumn.Name = "eventNameDataGridViewTextBoxColumn";
-            // 
-            // eventDateDataGridViewTextBoxColumn
-            // 
-            this.eventDateDataGridViewTextBoxColumn.DataPropertyName = "EventDate";
-            this.eventDateDataGridViewTextBoxColumn.HeaderText = "EventDate";
-            this.eventDateDataGridViewTextBoxColumn.Name = "eventDateDataGridViewTextBoxColumn";
-            // 
-            // eventTimeDataGridViewTextBoxColumn
-            // 
-            this.eventTimeDataGridViewTextBoxColumn.DataPropertyName = "EventTime";
-            this.eventTimeDataGridViewTextBoxColumn.HeaderText = "EventTime";
-            this.eventTimeDataGridViewTextBoxColumn.Name = "eventTimeDataGridViewTextBoxColumn";
-            // 
-            // locationDataGridViewTextBoxColumn
-            // 
-            this.locationDataGridViewTextBoxColumn.DataPropertyName = "Location";
-            this.locationDataGridViewTextBoxColumn.HeaderText = "Location";
-            this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            // 
-            // maxAttendeesDataGridViewTextBoxColumn
-            // 
-            this.maxAttendeesDataGridViewTextBoxColumn.DataPropertyName = "MaxAttendees";
-            this.maxAttendeesDataGridViewTextBoxColumn.HeaderText = "MaxAttendees";
-            this.maxAttendeesDataGridViewTextBoxColumn.Name = "maxAttendeesDataGridViewTextBoxColumn";
-            // 
-            // matricnoDataGridViewTextBoxColumn
-            // 
-            this.matricnoDataGridViewTextBoxColumn.DataPropertyName = "matric_no";
-            this.matricnoDataGridViewTextBoxColumn.HeaderText = "matric_no";
-            this.matricnoDataGridViewTextBoxColumn.Name = "matricnoDataGridViewTextBoxColumn";
+            this.sportsGalaxyDataSet.DataSetName = "SportsGalaxyDataSet";
+            this.sportsGalaxyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // eventBindingSource
             // 
             this.eventBindingSource.DataMember = "Event";
-            // 
-            // sportsGalaxyDB
-            // 
             // 
             // parrotClock1
             // 
@@ -284,9 +244,6 @@
             this.dateTxtBox.Size = new System.Drawing.Size(159, 20);
             this.dateTxtBox.TabIndex = 16;
             // 
-            // eventTableAdapter
-            // 
-            // 
             // startDate
             // 
             this.startDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -345,19 +302,63 @@
             this.locationComboBx.Size = new System.Drawing.Size(200, 21);
             this.locationComboBx.TabIndex = 23;
             // 
-            // sportsGalaxyDataSet
-            // 
-            this.sportsGalaxyDataSet.DataSetName = "SportsGalaxyDataSet";
-            this.sportsGalaxyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // eventBindingSource1
-            // 
-            this.eventBindingSource1.DataMember = "Event";
-            this.eventBindingSource1.DataSource = this.sportsGalaxyDataSet;
-            // 
             // eventTableAdapter1
             // 
             this.eventTableAdapter1.ClearBeforeFill = true;
+            // 
+            // eventBindingSource2
+            // 
+            this.eventBindingSource2.DataMember = "Event";
+            this.eventBindingSource2.DataSource = this.sportsGalaxyDataSet;
+            // 
+            // eventIdDataGridViewTextBoxColumn
+            // 
+            this.eventIdDataGridViewTextBoxColumn.DataPropertyName = "EventId";
+            this.eventIdDataGridViewTextBoxColumn.HeaderText = "EventId";
+            this.eventIdDataGridViewTextBoxColumn.Name = "eventIdDataGridViewTextBoxColumn";
+            this.eventIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // eventNameDataGridViewTextBoxColumn
+            // 
+            this.eventNameDataGridViewTextBoxColumn.DataPropertyName = "EventName";
+            this.eventNameDataGridViewTextBoxColumn.HeaderText = "EventName";
+            this.eventNameDataGridViewTextBoxColumn.Name = "eventNameDataGridViewTextBoxColumn";
+            // 
+            // eventDateDataGridViewTextBoxColumn
+            // 
+            this.eventDateDataGridViewTextBoxColumn.DataPropertyName = "EventDate";
+            this.eventDateDataGridViewTextBoxColumn.HeaderText = "EventDate";
+            this.eventDateDataGridViewTextBoxColumn.Name = "eventDateDataGridViewTextBoxColumn";
+            // 
+            // eventTimeDataGridViewTextBoxColumn
+            // 
+            this.eventTimeDataGridViewTextBoxColumn.DataPropertyName = "EventTime";
+            this.eventTimeDataGridViewTextBoxColumn.HeaderText = "EventTime";
+            this.eventTimeDataGridViewTextBoxColumn.Name = "eventTimeDataGridViewTextBoxColumn";
+            // 
+            // locationDataGridViewTextBoxColumn
+            // 
+            this.locationDataGridViewTextBoxColumn.DataPropertyName = "Location";
+            this.locationDataGridViewTextBoxColumn.HeaderText = "Location";
+            this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            // 
+            // maxAttendeesDataGridViewTextBoxColumn
+            // 
+            this.maxAttendeesDataGridViewTextBoxColumn.DataPropertyName = "MaxAttendees";
+            this.maxAttendeesDataGridViewTextBoxColumn.HeaderText = "MaxAttendees";
+            this.maxAttendeesDataGridViewTextBoxColumn.Name = "maxAttendeesDataGridViewTextBoxColumn";
+            // 
+            // matricnoDataGridViewTextBoxColumn
+            // 
+            this.matricnoDataGridViewTextBoxColumn.DataPropertyName = "matric_no";
+            this.matricnoDataGridViewTextBoxColumn.HeaderText = "matric_no";
+            this.matricnoDataGridViewTextBoxColumn.Name = "matricnoDataGridViewTextBoxColumn";
             // 
             // EventAdmin
             // 
@@ -391,9 +392,10 @@
             this.Text = "Admin Dashboard";
             this.Load += new System.EventHandler(this.AdminForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.eventDGV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sportsGalaxyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sportsGalaxyDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -415,14 +417,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox dateTxtBox;
         private System.Windows.Forms.BindingSource eventBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eventIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eventNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eventDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eventTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn locationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maxAttendeesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn matricnoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DateTimePicker startDate;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -432,5 +426,14 @@
         private SportsGalaxyDataSet sportsGalaxyDataSet;
         private System.Windows.Forms.BindingSource eventBindingSource1;
         private SportsGalaxyDataSetTableAdapters.EventTableAdapter eventTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eventIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eventNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eventDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eventTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn locationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maxAttendeesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn matricnoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource eventBindingSource2;
     }
 }

@@ -83,5 +83,39 @@ namespace SportsGalaxy
                 }
             }
         }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            string deleteQuery = "DELETE FROM [ADMIN] WHERE adminId = @AdminID";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(deleteQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@AdminId", IDTxtBox.Text);
+
+                    try
+                    {
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Admin deleted successfully!", "Success");
+
+                        refreshDGV();
+
+                        IDTxtBox.Clear();
+                        passwordTxtBox.Clear();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Registration failed: " + ex.Message, "Error");
+                    }
+                }
+            }
+        }
+
+        private void adminDGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            IDTxtBox.Text = adminDGV.Rows[e.RowIndex].Cells[0].Value.ToString();
+        }
     }
 }

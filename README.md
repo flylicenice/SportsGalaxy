@@ -191,4 +191,4 @@ This eliminates the need for physical tickets and improves user convenience.
 
 ## Admin Login Credentials
 
-ID = 1 Password = 1
+ID = 1 Password = 123456

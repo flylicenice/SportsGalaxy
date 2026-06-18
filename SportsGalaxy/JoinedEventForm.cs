@@ -20,7 +20,6 @@ namespace SportsGalaxy
         public JoinedEventForm(string matricNo)
         {
             InitializeComponent();
-            LoadCustomFont();
             currentMatricNo = matricNo;
         }
 
@@ -118,10 +117,6 @@ namespace SportsGalaxy
                     }
                 }
             }
-        }
-
-        private void LoadCustomFont()
-        {
         }
     }
 }

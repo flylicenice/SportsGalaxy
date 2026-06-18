@@ -93,13 +93,12 @@ namespace SportsGalaxy
         private void LoadCustomFont()
         {
             // Apply to your controls
-            skyLabel1.Font = CustomFonts.BodyFont;
-            skyLabel2.Font = CustomFonts.BodyFont;
-            skyLabel3.Font = CustomFonts.TitleFont;
-            skyLabel4.Font = CustomFonts.BodyFont;
-            skyLabel6.Font = CustomFonts.BodyFont;
-            skyLabel8.Font = CustomFonts.BodyFont;
-            skyLabel9.Font = CustomFonts.BodyFont;
+            lblUsername.Font = CustomFonts.BodyFont;
+            lblSignUp.Font = CustomFonts.TitleFont;
+            lblEmail.Font = CustomFonts.BodyFont;
+            lblMatricNumber.Font = CustomFonts.BodyFont;
+            lblConfirmPassword.Font = CustomFonts.BodyFont;
+            lblPassword.Font = CustomFonts.BodyFont;
             errorLbl.Font = CustomFonts.BodyFont;
             userNameTxtBox.Font = CustomFonts.SmallFont;
             emailTxtBox.Font = CustomFonts.SmallFont;

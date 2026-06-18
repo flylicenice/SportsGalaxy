@@ -46,8 +46,8 @@ namespace SportsGalaxy
         }
         private void LoadCustomFont()
         {
-            label1.Font = CustomFonts.TitleFont;
-            label2.Font = CustomFonts.BodyFont;
+            lblForgotPassword.Font = CustomFonts.TitleFont;
+            lblEnterEmail.Font = CustomFonts.BodyFont;
             emailTxtBox.Font = CustomFonts.SmallFont;
             resetBtn.Font = CustomFonts.SmallFont;
             backLinkLbl.Font = CustomFonts.SmallFont;

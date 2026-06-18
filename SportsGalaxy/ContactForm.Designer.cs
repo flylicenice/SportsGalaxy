@@ -28,34 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.skyLabel1 = new ReaLTaiizor.Controls.SkyLabel();
-            this.skyLabel2 = new ReaLTaiizor.Controls.SkyLabel();
+            this.lblContactOurAdmin = new ReaLTaiizor.Controls.SkyLabel();
+            this.lblPhone = new ReaLTaiizor.Controls.SkyLabel();
             this.phoneTxtBox = new ReaLTaiizor.Controls.SkyTextBox();
-            this.skyLabel3 = new ReaLTaiizor.Controls.SkyLabel();
+            this.lblEmail = new ReaLTaiizor.Controls.SkyLabel();
             this.emailTxtBox = new ReaLTaiizor.Controls.SkyTextBox();
             this.SuspendLayout();
             // 
-            // skyLabel1
+            // lblContactOurAdmin
             // 
-            this.skyLabel1.AutoSize = true;
-            this.skyLabel1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skyLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
-            this.skyLabel1.Location = new System.Drawing.Point(21, 19);
-            this.skyLabel1.Name = "skyLabel1";
-            this.skyLabel1.Size = new System.Drawing.Size(136, 13);
-            this.skyLabel1.TabIndex = 0;
-            this.skyLabel1.Text = "Contact Our Admin: ";
+            this.lblContactOurAdmin.AutoSize = true;
+            this.lblContactOurAdmin.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContactOurAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
+            this.lblContactOurAdmin.Location = new System.Drawing.Point(28, 23);
+            this.lblContactOurAdmin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblContactOurAdmin.Name = "lblContactOurAdmin";
+            this.lblContactOurAdmin.Size = new System.Drawing.Size(167, 17);
+            this.lblContactOurAdmin.TabIndex = 0;
+            this.lblContactOurAdmin.Text = "Contact Our Admin: ";
             // 
-            // skyLabel2
+            // lblPhone
             // 
-            this.skyLabel2.AutoSize = true;
-            this.skyLabel2.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold);
-            this.skyLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
-            this.skyLabel2.Location = new System.Drawing.Point(22, 78);
-            this.skyLabel2.Name = "skyLabel2";
-            this.skyLabel2.Size = new System.Drawing.Size(40, 12);
-            this.skyLabel2.TabIndex = 1;
-            this.skyLabel2.Text = "Phone:";
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold);
+            this.lblPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
+            this.lblPhone.Location = new System.Drawing.Point(29, 96);
+            this.lblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(53, 14);
+            this.lblPhone.TabIndex = 1;
+            this.lblPhone.Text = "Phone:";
             // 
             // phoneTxtBox
             // 
@@ -68,11 +70,12 @@
             this.phoneTxtBox.Enabled = false;
             this.phoneTxtBox.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold);
             this.phoneTxtBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
-            this.phoneTxtBox.Location = new System.Drawing.Point(68, 74);
+            this.phoneTxtBox.Location = new System.Drawing.Point(91, 91);
+            this.phoneTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.phoneTxtBox.MaxLength = 32767;
             this.phoneTxtBox.MultiLine = false;
             this.phoneTxtBox.Name = "phoneTxtBox";
-            this.phoneTxtBox.Size = new System.Drawing.Size(155, 21);
+            this.phoneTxtBox.Size = new System.Drawing.Size(207, 24);
             this.phoneTxtBox.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.phoneTxtBox.TabIndex = 2;
             this.phoneTxtBox.Text = "012-3456-789";
@@ -80,16 +83,17 @@
             this.phoneTxtBox.UnknownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.phoneTxtBox.UseSystemPasswordChar = false;
             // 
-            // skyLabel3
+            // lblEmail
             // 
-            this.skyLabel3.AutoSize = true;
-            this.skyLabel3.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold);
-            this.skyLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
-            this.skyLabel3.Location = new System.Drawing.Point(22, 117);
-            this.skyLabel3.Name = "skyLabel3";
-            this.skyLabel3.Size = new System.Drawing.Size(36, 12);
-            this.skyLabel3.TabIndex = 3;
-            this.skyLabel3.Text = "Email:";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold);
+            this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
+            this.lblEmail.Location = new System.Drawing.Point(29, 144);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(48, 14);
+            this.lblEmail.TabIndex = 3;
+            this.lblEmail.Text = "Email:";
             // 
             // emailTxtBox
             // 
@@ -102,11 +106,12 @@
             this.emailTxtBox.Enabled = false;
             this.emailTxtBox.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold);
             this.emailTxtBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
-            this.emailTxtBox.Location = new System.Drawing.Point(68, 113);
+            this.emailTxtBox.Location = new System.Drawing.Point(91, 139);
+            this.emailTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.emailTxtBox.MaxLength = 32767;
             this.emailTxtBox.MultiLine = false;
             this.emailTxtBox.Name = "emailTxtBox";
-            this.emailTxtBox.Size = new System.Drawing.Size(155, 21);
+            this.emailTxtBox.Size = new System.Drawing.Size(207, 24);
             this.emailTxtBox.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.emailTxtBox.TabIndex = 4;
             this.emailTxtBox.Text = "sportsgalaxy74@gmail.com";
@@ -116,15 +121,16 @@
             // 
             // ContactForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 161);
+            this.ClientSize = new System.Drawing.Size(379, 198);
             this.Controls.Add(this.emailTxtBox);
-            this.Controls.Add(this.skyLabel3);
+            this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.phoneTxtBox);
-            this.Controls.Add(this.skyLabel2);
-            this.Controls.Add(this.skyLabel1);
+            this.Controls.Add(this.lblPhone);
+            this.Controls.Add(this.lblContactOurAdmin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ContactForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contact Us";
@@ -135,10 +141,10 @@
 
         #endregion
 
-        private ReaLTaiizor.Controls.SkyLabel skyLabel1;
-        private ReaLTaiizor.Controls.SkyLabel skyLabel2;
+        private ReaLTaiizor.Controls.SkyLabel lblContactOurAdmin;
+        private ReaLTaiizor.Controls.SkyLabel lblPhone;
         private ReaLTaiizor.Controls.SkyTextBox phoneTxtBox;
-        private ReaLTaiizor.Controls.SkyLabel skyLabel3;
+        private ReaLTaiizor.Controls.SkyLabel lblEmail;
         private ReaLTaiizor.Controls.SkyTextBox emailTxtBox;
     }
 }

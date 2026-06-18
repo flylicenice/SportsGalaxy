@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,10 @@ namespace SportsGalaxy
 {
     public partial class EventBlock : UserControl
     {
+        private static string projectRootFolder = System.IO.Path.GetFullPath(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\"));
+
+        private string connectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Path.Combine(projectRootFolder, "Database.mdf")};Integrated Security=True;";
+
         string eventName, location, eventDate, eventTime, eventDesc;
         int current, max, eventid;
         private string userid;
@@ -39,13 +44,24 @@ namespace SportsGalaxy
                 joinBtn.Text = "Full";
                 joinBtn.Enabled = false;
             }
+            else if(AlreadyJoined(eventid))
+            {
+                joinBtn.Text = "Joined";
+                joinBtn.Enabled = false;
+                joinBtn.BackColor = Color.Gray;
+            }
             choosePic(location);
         }
 
         private void joinBtn_Click(object sender, EventArgs e)
         {
             JoinEvent joinForm = new JoinEvent(userid, eventid, eventName, eventDate, eventTime, eventDesc, location, current, max);
-            joinForm.ShowDialog();
+            if (joinForm.ShowDialog() == DialogResult.Yes)
+            {
+                joinBtn.Text = "Joined";
+                joinBtn.Enabled = false;
+                joinBtn.BackColor = Color.Gray;
+            }
         }
 
         private void loadCustomFont()
@@ -55,6 +71,22 @@ namespace SportsGalaxy
             dateLbl.Font = CustomFonts.SmallFont;
             timeLbl.Font = CustomFonts.SmallFont;
             maxLabel.Font = CustomFonts.SmallFont;
+        }
+
+        private bool AlreadyJoined(int eventId)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = @"SELECT COUNT(*) FROM [JOIN_EVENTS] WHERE EventId = @eventId AND matric_no = @matric";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@eventId", eventId);
+                    cmd.Parameters.AddWithValue("@matric", userid);
+                    conn.Open();
+                    return (int)cmd.ExecuteScalar() > 0;
+                }
+            }
         }
 
         private void choosePic(string location)

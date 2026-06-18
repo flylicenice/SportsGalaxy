@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows.Forms;
 
 namespace SportsGalaxy
@@ -76,6 +77,38 @@ namespace SportsGalaxy
                         MessageBox.Show("An operational error occurred: " + ex.Message, "Database Error");
                     }
                 }
+            }
+        }
+
+        private void IDTxtBox_Enter(object sender, EventArgs e)
+        {
+            if(IDTxtBox.Text == "Your ID")
+            {
+                IDTxtBox.Text = "";
+            }
+        }
+
+        private void IDTxtBox_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(IDTxtBox.Text))
+            {
+                IDTxtBox.Text = "Your ID";
+            }
+        }
+
+        private void passwordTxtBox_Enter(object sender, EventArgs e)
+        {
+            if(passwordTxtBox.Text == "Password")
+            {
+                passwordTxtBox.Text = "";
+            }
+        }
+
+        private void passwordTxtBox_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(passwordTxtBox.Text))
+            {
+                passwordTxtBox.Text = "Password";
             }
         }
     }

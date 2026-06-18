@@ -70,6 +70,9 @@ namespace SportsGalaxy
                             if (insertedRow > 0)
                             {
                                 MessageBox.Show("Join Successfully!");
+
+                                this.DialogResult = DialogResult.Yes;
+                                this.Close();
                             }
                         }
                         catch (Exception ex)

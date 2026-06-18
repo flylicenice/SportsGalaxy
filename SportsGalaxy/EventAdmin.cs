@@ -33,9 +33,9 @@ namespace SportsGalaxy
         {
             IDTxtBox.Text = eventDGV.Rows[e.RowIndex].Cells[0].Value.ToString();
             nameTxtBox.Text = eventDGV.Rows[e.RowIndex].Cells[1].Value.ToString();
-            locationTxtBox.Text = eventDGV.Rows[e.RowIndex].Cells[4].Value.ToString();
             dateTxtBox.Text = eventDGV.Rows[e.RowIndex].Cells[2].Value.ToString();
             timeTxtBox.Text = eventDGV.Rows[e.RowIndex].Cells[3].Value.ToString();
+            locationTxtBox.Text = eventDGV.Rows[e.RowIndex].Cells[4].Value.ToString();
         }
 
         private void chartRefresh()
@@ -117,16 +117,6 @@ namespace SportsGalaxy
                     }
                 }
             }
-        }
-
-        private void userToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void item_click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

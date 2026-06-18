@@ -34,10 +34,10 @@
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adminBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sportsGalaxyDataSet = new SportsGalaxy.SportsGalaxyDataSet();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblAdminID = new System.Windows.Forms.Label();
             this.IDTxtBox = new System.Windows.Forms.TextBox();
             this.addBtn = new ReaLTaiizor.Controls.ThunderButton();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.passwordTxtBox = new System.Windows.Forms.TextBox();
             this.deleteBtn = new ReaLTaiizor.Controls.ThunderButton();
             this.adminTableAdapter1 = new SportsGalaxy.SportsGalaxyDataSetTableAdapters.AdminTableAdapter();
@@ -55,9 +55,11 @@
             this.adminIdDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn});
             this.adminDGV.DataSource = this.adminBindingSource1;
-            this.adminDGV.Location = new System.Drawing.Point(12, 12);
+            this.adminDGV.Location = new System.Drawing.Point(16, 15);
+            this.adminDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.adminDGV.Name = "adminDGV";
-            this.adminDGV.Size = new System.Drawing.Size(282, 197);
+            this.adminDGV.RowHeadersWidth = 51;
+            this.adminDGV.Size = new System.Drawing.Size(376, 242);
             this.adminDGV.TabIndex = 0;
             this.adminDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adminDGV_CellClick);
             // 
@@ -65,6 +67,7 @@
             // 
             this.adminIdDataGridViewTextBoxColumn.DataPropertyName = "AdminId";
             this.adminIdDataGridViewTextBoxColumn.HeaderText = "AdminId";
+            this.adminIdDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.adminIdDataGridViewTextBoxColumn.Name = "adminIdDataGridViewTextBoxColumn";
             this.adminIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -72,6 +75,7 @@
             // 
             this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
             this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
             // 
             // adminBindingSource1
@@ -84,20 +88,22 @@
             this.sportsGalaxyDataSet.DataSetName = "SportsGalaxyDataSet";
             this.sportsGalaxyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label1
+            // lblAdminID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 224);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Admin ID";
+            this.lblAdminID.AutoSize = true;
+            this.lblAdminID.Location = new System.Drawing.Point(16, 276);
+            this.lblAdminID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAdminID.Name = "lblAdminID";
+            this.lblAdminID.Size = new System.Drawing.Size(61, 16);
+            this.lblAdminID.TabIndex = 9;
+            this.lblAdminID.Text = "Admin ID";
             // 
             // IDTxtBox
             // 
-            this.IDTxtBox.Location = new System.Drawing.Point(105, 221);
+            this.IDTxtBox.Location = new System.Drawing.Point(140, 272);
+            this.IDTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.IDTxtBox.Name = "IDTxtBox";
-            this.IDTxtBox.Size = new System.Drawing.Size(189, 20);
+            this.IDTxtBox.Size = new System.Drawing.Size(251, 22);
             this.IDTxtBox.TabIndex = 11;
             // 
             // addBtn
@@ -105,28 +111,31 @@
             this.addBtn.BackColor = System.Drawing.Color.Transparent;
             this.addBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.addBtn.Location = new System.Drawing.Point(12, 297);
+            this.addBtn.Location = new System.Drawing.Point(16, 366);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(120, 40);
+            this.addBtn.Size = new System.Drawing.Size(160, 49);
             this.addBtn.TabIndex = 12;
             this.addBtn.Text = "Add";
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
-            // label2
+            // lblPassword
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 258);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Password";
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(16, 318);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(67, 16);
+            this.lblPassword.TabIndex = 13;
+            this.lblPassword.Text = "Password";
             // 
             // passwordTxtBox
             // 
-            this.passwordTxtBox.Location = new System.Drawing.Point(105, 255);
+            this.passwordTxtBox.Location = new System.Drawing.Point(140, 314);
+            this.passwordTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.passwordTxtBox.Name = "passwordTxtBox";
             this.passwordTxtBox.PasswordChar = '*';
-            this.passwordTxtBox.Size = new System.Drawing.Size(189, 20);
+            this.passwordTxtBox.Size = new System.Drawing.Size(251, 22);
             this.passwordTxtBox.TabIndex = 14;
             // 
             // deleteBtn
@@ -134,9 +143,10 @@
             this.deleteBtn.BackColor = System.Drawing.Color.Transparent;
             this.deleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.deleteBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.deleteBtn.Location = new System.Drawing.Point(174, 297);
+            this.deleteBtn.Location = new System.Drawing.Point(232, 366);
+            this.deleteBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(120, 40);
+            this.deleteBtn.Size = new System.Drawing.Size(160, 49);
             this.deleteBtn.TabIndex = 15;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
@@ -147,17 +157,18 @@
             // 
             // AdminAdd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 378);
+            this.ClientSize = new System.Drawing.Size(412, 465);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.passwordTxtBox);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.addBtn);
             this.Controls.Add(this.IDTxtBox);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblAdminID);
             this.Controls.Add(this.adminDGV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AdminAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminAdd";
@@ -173,10 +184,10 @@
         #endregion
 
         private System.Windows.Forms.DataGridView adminDGV;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAdminID;
         private System.Windows.Forms.TextBox IDTxtBox;
         private ReaLTaiizor.Controls.ThunderButton addBtn;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox passwordTxtBox;
         private ReaLTaiizor.Controls.ThunderButton deleteBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn adminIdDataGridViewTextBoxColumn;

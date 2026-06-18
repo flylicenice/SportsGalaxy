@@ -48,9 +48,10 @@
             this.closeLinkLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.closeLinkLbl.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.closeLinkLbl.LinkColor = System.Drawing.Color.White;
-            this.closeLinkLbl.Location = new System.Drawing.Point(751, 440);
+            this.closeLinkLbl.Location = new System.Drawing.Point(1001, 542);
+            this.closeLinkLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.closeLinkLbl.Name = "closeLinkLbl";
-            this.closeLinkLbl.Size = new System.Drawing.Size(31, 17);
+            this.closeLinkLbl.Size = new System.Drawing.Size(40, 22);
             this.closeLinkLbl.TabIndex = 3;
             this.closeLinkLbl.TabStop = true;
             this.closeLinkLbl.Text = "Exit";
@@ -64,9 +65,10 @@
             this.signUpLink.ForeColor = System.Drawing.Color.LightGray;
             this.signUpLink.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.signUpLink.LinkColor = System.Drawing.Color.DarkGray;
-            this.signUpLink.Location = new System.Drawing.Point(699, 354);
+            this.signUpLink.Location = new System.Drawing.Point(932, 436);
+            this.signUpLink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.signUpLink.Name = "signUpLink";
-            this.signUpLink.Size = new System.Drawing.Size(132, 16);
+            this.signUpLink.Size = new System.Drawing.Size(164, 20);
             this.signUpLink.TabIndex = 2;
             this.signUpLink.TabStop = true;
             this.signUpLink.Text = "First time here? Sign Up";
@@ -94,7 +96,8 @@
             this.loginBtn.HoverBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(25)))), ((int)(((byte)(73)))), ((int)(((byte)(109)))));
             this.loginBtn.HoverForeColor = System.Drawing.Color.White;
             this.loginBtn.HoverShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.loginBtn.Location = new System.Drawing.Point(698, 280);
+            this.loginBtn.Location = new System.Drawing.Point(931, 345);
+            this.loginBtn.Margin = new System.Windows.Forms.Padding(4);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.NormalBGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.loginBtn.NormalBGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
@@ -104,7 +107,7 @@
             this.loginBtn.NormalBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.loginBtn.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
             this.loginBtn.NormalShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.loginBtn.Size = new System.Drawing.Size(133, 48);
+            this.loginBtn.Size = new System.Drawing.Size(177, 59);
             this.loginBtn.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.loginBtn.TabIndex = 7;
             this.loginBtn.Text = "Login";
@@ -117,9 +120,10 @@
             this.skyLabel1.BackColor = System.Drawing.Color.Transparent;
             this.skyLabel1.Font = new System.Drawing.Font("Gill Sans MT", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.skyLabel1.ForeColor = System.Drawing.Color.Transparent;
-            this.skyLabel1.Location = new System.Drawing.Point(537, 62);
+            this.skyLabel1.Location = new System.Drawing.Point(716, 76);
+            this.skyLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.skyLabel1.Name = "skyLabel1";
-            this.skyLabel1.Size = new System.Drawing.Size(438, 87);
+            this.skyLabel1.Size = new System.Drawing.Size(548, 111);
             this.skyLabel1.TabIndex = 8;
             this.skyLabel1.Text = "SportsGalaxy";
             // 
@@ -133,12 +137,13 @@
             this.userNameTxtBox.BorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
             this.userNameTxtBox.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userNameTxtBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.userNameTxtBox.Location = new System.Drawing.Point(642, 175);
+            this.userNameTxtBox.Location = new System.Drawing.Point(856, 215);
+            this.userNameTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.userNameTxtBox.MaxLength = 32767;
             this.userNameTxtBox.MultiLine = false;
             this.userNameTxtBox.Name = "userNameTxtBox";
-            this.userNameTxtBox.Padding = new System.Windows.Forms.Padding(30);
-            this.userNameTxtBox.Size = new System.Drawing.Size(254, 28);
+            this.userNameTxtBox.Padding = new System.Windows.Forms.Padding(40, 37, 40, 37);
+            this.userNameTxtBox.Size = new System.Drawing.Size(339, 32);
             this.userNameTxtBox.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.userNameTxtBox.TabIndex = 10;
             this.userNameTxtBox.Text = "Username";
@@ -158,12 +163,13 @@
             this.passwordTxtBox.BorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
             this.passwordTxtBox.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTxtBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.passwordTxtBox.Location = new System.Drawing.Point(642, 224);
+            this.passwordTxtBox.Location = new System.Drawing.Point(856, 276);
+            this.passwordTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.passwordTxtBox.MaxLength = 32767;
             this.passwordTxtBox.MultiLine = false;
             this.passwordTxtBox.Name = "passwordTxtBox";
-            this.passwordTxtBox.Padding = new System.Windows.Forms.Padding(30);
-            this.passwordTxtBox.Size = new System.Drawing.Size(254, 28);
+            this.passwordTxtBox.Padding = new System.Windows.Forms.Padding(40, 37, 40, 37);
+            this.passwordTxtBox.Size = new System.Drawing.Size(339, 32);
             this.passwordTxtBox.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.passwordTxtBox.TabIndex = 11;
             this.passwordTxtBox.Text = "Password";
@@ -181,9 +187,10 @@
             this.forgotPasswdLink.ForeColor = System.Drawing.Color.LightGray;
             this.forgotPasswdLink.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.forgotPasswdLink.LinkColor = System.Drawing.Color.Red;
-            this.forgotPasswdLink.Location = new System.Drawing.Point(711, 387);
+            this.forgotPasswdLink.Location = new System.Drawing.Point(948, 476);
+            this.forgotPasswdLink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.forgotPasswdLink.Name = "forgotPasswdLink";
-            this.forgotPasswdLink.Size = new System.Drawing.Size(101, 16);
+            this.forgotPasswdLink.Size = new System.Drawing.Size(126, 20);
             this.forgotPasswdLink.TabIndex = 12;
             this.forgotPasswdLink.TabStop = true;
             this.forgotPasswdLink.Text = "Forgot Password?";
@@ -198,9 +205,10 @@
             this.adminLinkLbl.ForeColor = System.Drawing.Color.LightGray;
             this.adminLinkLbl.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.adminLinkLbl.LinkColor = System.Drawing.Color.Transparent;
-            this.adminLinkLbl.Location = new System.Drawing.Point(964, 565);
+            this.adminLinkLbl.Location = new System.Drawing.Point(1285, 695);
+            this.adminLinkLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.adminLinkLbl.Name = "adminLinkLbl";
-            this.adminLinkLbl.Size = new System.Drawing.Size(42, 16);
+            this.adminLinkLbl.Size = new System.Drawing.Size(52, 20);
             this.adminLinkLbl.TabIndex = 13;
             this.adminLinkLbl.TabStop = true;
             this.adminLinkLbl.Text = "Admin";
@@ -208,12 +216,12 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::SportsGalaxy.Properties.Resources.bg_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1018, 590);
+            this.ClientSize = new System.Drawing.Size(1357, 726);
             this.Controls.Add(this.adminLinkLbl);
             this.Controls.Add(this.forgotPasswdLink);
             this.Controls.Add(this.passwordTxtBox);
@@ -224,6 +232,7 @@
             this.Controls.Add(this.closeLinkLbl);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome to SportsGalaxy!";

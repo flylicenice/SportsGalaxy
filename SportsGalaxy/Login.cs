@@ -39,14 +39,6 @@ namespace SportsGalaxy
             this.Close();
         }
 
-        private void emailTxtBox_textChanged(object sender, EventArgs e)
-        {
-            if (userNameTxtBox.Text == "")
-            {
-                userNameTxtBox.Text = "UTeM Email";
-            }
-        }
-
         private void loginBtn_Click(object sender, EventArgs e)
         {
             string selectQuery = "SELECT * FROM [User] WHERE user_name = @Username";

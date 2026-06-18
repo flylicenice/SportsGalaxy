@@ -42,7 +42,7 @@
             this.dateLbl = new System.Windows.Forms.Label();
             this.timeLbl = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblMaxAttendees = new System.Windows.Forms.Label();
             this.attendeesBox = new ReaLTaiizor.Controls.SkyNumeric();
             this.backBtn = new ReaLTaiizor.Controls.SkyButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -51,9 +51,10 @@
             // titleLbl
             // 
             this.titleLbl.AutoSize = true;
-            this.titleLbl.Location = new System.Drawing.Point(229, 33);
+            this.titleLbl.Location = new System.Drawing.Point(305, 41);
+            this.titleLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titleLbl.Name = "titleLbl";
-            this.titleLbl.Size = new System.Drawing.Size(113, 13);
+            this.titleLbl.Size = new System.Drawing.Size(136, 16);
             this.titleLbl.TabIndex = 0;
             this.titleLbl.Text = "Create An Event Now!";
             // 
@@ -79,7 +80,8 @@
             this.addButton.HoverBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(25)))), ((int)(((byte)(73)))), ((int)(((byte)(109)))));
             this.addButton.HoverForeColor = System.Drawing.Color.White;
             this.addButton.HoverShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.addButton.Location = new System.Drawing.Point(317, 405);
+            this.addButton.Location = new System.Drawing.Point(423, 498);
+            this.addButton.Margin = new System.Windows.Forms.Padding(4);
             this.addButton.Name = "addButton";
             this.addButton.NormalBGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.addButton.NormalBGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
@@ -89,7 +91,7 @@
             this.addButton.NormalBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.addButton.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
             this.addButton.NormalShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.addButton.Size = new System.Drawing.Size(99, 42);
+            this.addButton.Size = new System.Drawing.Size(132, 52);
             this.addButton.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.addButton.TabIndex = 1;
             this.addButton.Text = "Add";
@@ -98,53 +100,59 @@
             // startDate
             // 
             this.startDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.startDate.Location = new System.Drawing.Point(440, 112);
+            this.startDate.Location = new System.Drawing.Point(587, 138);
+            this.startDate.Margin = new System.Windows.Forms.Padding(4);
             this.startDate.Name = "startDate";
-            this.startDate.Size = new System.Drawing.Size(313, 20);
+            this.startDate.Size = new System.Drawing.Size(416, 22);
             this.startDate.TabIndex = 3;
             this.startDate.Validating += new System.ComponentModel.CancelEventHandler(this.startDate_validating);
             // 
             // nameLbl
             // 
             this.nameLbl.AutoSize = true;
-            this.nameLbl.Location = new System.Drawing.Point(86, 87);
+            this.nameLbl.Location = new System.Drawing.Point(115, 107);
+            this.nameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nameLbl.Name = "nameLbl";
-            this.nameLbl.Size = new System.Drawing.Size(66, 13);
+            this.nameLbl.Size = new System.Drawing.Size(81, 16);
             this.nameLbl.TabIndex = 4;
             this.nameLbl.Text = "Event Name";
             // 
             // locationLbl
             // 
             this.locationLbl.AutoSize = true;
-            this.locationLbl.Location = new System.Drawing.Point(86, 156);
+            this.locationLbl.Location = new System.Drawing.Point(115, 192);
+            this.locationLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.locationLbl.Name = "locationLbl";
-            this.locationLbl.Size = new System.Drawing.Size(48, 13);
+            this.locationLbl.Size = new System.Drawing.Size(58, 16);
             this.locationLbl.TabIndex = 5;
             this.locationLbl.Text = "Location";
             // 
             // descLbl
             // 
             this.descLbl.AutoSize = true;
-            this.descLbl.Location = new System.Drawing.Point(86, 229);
+            this.descLbl.Location = new System.Drawing.Point(115, 282);
+            this.descLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.descLbl.Name = "descLbl";
-            this.descLbl.Size = new System.Drawing.Size(141, 13);
+            this.descLbl.Size = new System.Drawing.Size(174, 16);
             this.descLbl.TabIndex = 6;
             this.descLbl.Text = "Description (Max 200 words)";
             // 
             // startTime
             // 
             this.startTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.startTime.Location = new System.Drawing.Point(440, 183);
+            this.startTime.Location = new System.Drawing.Point(587, 225);
+            this.startTime.Margin = new System.Windows.Forms.Padding(4);
             this.startTime.Name = "startTime";
             this.startTime.ShowUpDown = true;
-            this.startTime.Size = new System.Drawing.Size(313, 20);
+            this.startTime.Size = new System.Drawing.Size(416, 22);
             this.startTime.TabIndex = 7;
             // 
             // nameTxtBox
             // 
-            this.nameTxtBox.Location = new System.Drawing.Point(89, 112);
+            this.nameTxtBox.Location = new System.Drawing.Point(119, 138);
+            this.nameTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameTxtBox.Name = "nameTxtBox";
-            this.nameTxtBox.Size = new System.Drawing.Size(243, 20);
+            this.nameTxtBox.Size = new System.Drawing.Size(323, 22);
             this.nameTxtBox.TabIndex = 8;
             this.nameTxtBox.Validating += new System.ComponentModel.CancelEventHandler(this.nameTxtBx_validating);
             // 
@@ -180,9 +188,10 @@
             this.locationComboBx.ListForeColor = System.Drawing.Color.Black;
             this.locationComboBx.ListSelectedBackColorA = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.locationComboBx.ListSelectedBackColorB = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.locationComboBx.Location = new System.Drawing.Point(89, 181);
+            this.locationComboBx.Location = new System.Drawing.Point(119, 223);
+            this.locationComboBx.Margin = new System.Windows.Forms.Padding(4);
             this.locationComboBx.Name = "locationComboBx";
-            this.locationComboBx.Size = new System.Drawing.Size(243, 22);
+            this.locationComboBx.Size = new System.Drawing.Size(323, 22);
             this.locationComboBx.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.locationComboBx.StartIndex = 0;
             this.locationComboBx.TabIndex = 9;
@@ -191,28 +200,31 @@
             // 
             // descTxtBox
             // 
-            this.descTxtBox.Location = new System.Drawing.Point(89, 255);
+            this.descTxtBox.Location = new System.Drawing.Point(119, 314);
+            this.descTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.descTxtBox.Multiline = true;
             this.descTxtBox.Name = "descTxtBox";
-            this.descTxtBox.Size = new System.Drawing.Size(327, 135);
+            this.descTxtBox.Size = new System.Drawing.Size(435, 165);
             this.descTxtBox.TabIndex = 10;
             this.descTxtBox.Validating += new System.ComponentModel.CancelEventHandler(this.descTxtBox_validating);
             // 
             // dateLbl
             // 
             this.dateLbl.AutoSize = true;
-            this.dateLbl.Location = new System.Drawing.Point(437, 87);
+            this.dateLbl.Location = new System.Drawing.Point(583, 107);
+            this.dateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dateLbl.Name = "dateLbl";
-            this.dateLbl.Size = new System.Drawing.Size(30, 13);
+            this.dateLbl.Size = new System.Drawing.Size(36, 16);
             this.dateLbl.TabIndex = 11;
             this.dateLbl.Text = "Date";
             // 
             // timeLbl
             // 
             this.timeLbl.AutoSize = true;
-            this.timeLbl.Location = new System.Drawing.Point(437, 156);
+            this.timeLbl.Location = new System.Drawing.Point(583, 192);
+            this.timeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.timeLbl.Name = "timeLbl";
-            this.timeLbl.Size = new System.Drawing.Size(30, 13);
+            this.timeLbl.Size = new System.Drawing.Size(38, 16);
             this.timeLbl.TabIndex = 12;
             this.timeLbl.Text = "Time";
             // 
@@ -221,14 +233,15 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
-            // label1
+            // lblMaxAttendees
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(437, 229);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Max Attendees";
+            this.lblMaxAttendees.AutoSize = true;
+            this.lblMaxAttendees.Location = new System.Drawing.Point(583, 282);
+            this.lblMaxAttendees.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMaxAttendees.Name = "lblMaxAttendees";
+            this.lblMaxAttendees.Size = new System.Drawing.Size(96, 16);
+            this.lblMaxAttendees.TabIndex = 13;
+            this.lblMaxAttendees.Text = "Max Attendees";
             // 
             // attendeesBox
             // 
@@ -248,11 +261,12 @@
             this.attendeesBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.attendeesBox.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold);
             this.attendeesBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
-            this.attendeesBox.Location = new System.Drawing.Point(440, 255);
+            this.attendeesBox.Location = new System.Drawing.Point(587, 314);
+            this.attendeesBox.Margin = new System.Windows.Forms.Padding(4);
             this.attendeesBox.Maximum = ((long)(100));
             this.attendeesBox.Minimum = ((long)(5));
             this.attendeesBox.Name = "attendeesBox";
-            this.attendeesBox.Size = new System.Drawing.Size(75, 30);
+            this.attendeesBox.Size = new System.Drawing.Size(100, 30);
             this.attendeesBox.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.attendeesBox.TabIndex = 14;
             this.attendeesBox.Text = "skyNumeric1";
@@ -281,7 +295,8 @@
             this.backBtn.HoverBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(25)))), ((int)(((byte)(73)))), ((int)(((byte)(109)))));
             this.backBtn.HoverForeColor = System.Drawing.Color.White;
             this.backBtn.HoverShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.backBtn.Location = new System.Drawing.Point(440, 405);
+            this.backBtn.Location = new System.Drawing.Point(587, 498);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(4);
             this.backBtn.Name = "backBtn";
             this.backBtn.NormalBGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.backBtn.NormalBGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
@@ -291,7 +306,7 @@
             this.backBtn.NormalBorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.backBtn.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
             this.backBtn.NormalShadowForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.backBtn.Size = new System.Drawing.Size(99, 42);
+            this.backBtn.Size = new System.Drawing.Size(132, 52);
             this.backBtn.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.backBtn.TabIndex = 15;
             this.backBtn.Text = "Back";
@@ -299,12 +314,12 @@
             // 
             // AddEvent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.attendeesBox);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblMaxAttendees);
             this.Controls.Add(this.timeLbl);
             this.Controls.Add(this.dateLbl);
             this.Controls.Add(this.descTxtBox);
@@ -318,6 +333,7 @@
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.titleLbl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddEvent";
             this.Text = "AddEvent";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -341,7 +357,7 @@
         private System.Windows.Forms.Label dateLbl;
         private System.Windows.Forms.Label timeLbl;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMaxAttendees;
         private ReaLTaiizor.Controls.SkyNumeric attendeesBox;
         private ReaLTaiizor.Controls.SkyButton backBtn;
     }

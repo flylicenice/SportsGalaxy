@@ -21,7 +21,7 @@ namespace SportsGalaxy
 
         private string connectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Path.Combine(projectRootFolder, "Database.mdf")};Integrated Security=True;";
         private AddEvent addEventForm;
-        private eventForm eventForm;
+        private eventForm EventForm;
         private JoinedEventForm joinedEventForm;
         string currentMatricNo;
         public Main_Page(string matricNo)
@@ -43,12 +43,6 @@ namespace SportsGalaxy
             contactLinkLbl.Font = CustomFonts.SmallFont;
         }
 
-        private void startLinkLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            eventForm.Hide();
-            addEventForm.Show();
-            addEventForm.BringToFront();
-        }
 
         private void logOutLinkLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -64,12 +58,12 @@ namespace SportsGalaxy
             addEventForm.Parent = splitContainer1.Panel2;
             addEventForm.Hide();
 
-            eventForm = new eventForm(currentMatricNo);
-            eventForm.TopLevel = false;
-            eventForm.Dock = DockStyle.Fill;
-            splitContainer1.Panel2.Controls.Add(eventForm);
-            eventForm.Parent = splitContainer1.Panel2;
-            eventForm.Show();
+            EventForm = new eventForm(currentMatricNo);
+            EventForm.TopLevel = false;
+            EventForm.Dock = DockStyle.Fill;
+            splitContainer1.Panel2.Controls.Add(EventForm);
+            EventForm.Parent = splitContainer1.Panel2;
+            EventForm.Show();
 
             joinedEventForm = new JoinedEventForm(currentMatricNo);
             joinedEventForm.TopLevel = false;
@@ -98,17 +92,33 @@ namespace SportsGalaxy
             
         }
 
-        private void joinLinkLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void startLinkLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            eventForm.refreshEvent();
-            addEventForm.Hide();
-            eventForm.Show();
-            eventForm.BringToFront();
+            EventForm.Hide();
+            joinedEventForm.Hide();
+
+            addEventForm.Show();
+            addEventForm.BringToFront();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void joinLinkLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            EventForm.refreshEvent();
+
+            addEventForm.Hide();
+            joinedEventForm.Hide();
+
+            EventForm.Show();
+            EventForm.BringToFront();
+        }
+
+        private void eventJoinedLinkLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             joinedEventForm.refreshEvent();
+
+            addEventForm.Hide();
+            EventForm.Hide();
+
             joinedEventForm.Show();
             joinedEventForm.BringToFront();
         }
@@ -117,7 +127,6 @@ namespace SportsGalaxy
         {
             ContactForm contactForm = new ContactForm();
             contactForm.ShowDialog();
-
         }
     }
 }

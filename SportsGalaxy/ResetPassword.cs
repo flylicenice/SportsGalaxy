@@ -34,15 +34,15 @@ namespace SportsGalaxy
             pfc.AddFontFile(@"Fonts\PixelifySans-Bold.ttf");
 
             // Apply to your controls
-            label1.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
-            label2.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
-            label3.Font = new Font(pfc.Families[0], 12, FontStyle.Regular);
+            lblResetPassword.Font = new Font(pfc.Families[0], 20, FontStyle.Bold);
+            lblNewPassword.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
+            lblHi.Font = new Font(pfc.Families[0], 12, FontStyle.Regular);
             newPasswdTxtBox.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
             closeLinkLbl.Font = new Font(pfc.Families[0], 8, FontStyle.Bold);
             resetBtn.Font = new Font(pfc.Families[0], 8, FontStyle.Bold);
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void closeLinkLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
         }
@@ -60,7 +60,7 @@ namespace SportsGalaxy
                     if (result != null)
                     {
                         string userName = result.ToString();
-                        label3.Text += " " + userName;
+                        lblHi.Text += " " + userName;
                     }
                     else
                     {

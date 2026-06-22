@@ -146,6 +146,7 @@
             this.startTime.ShowUpDown = true;
             this.startTime.Size = new System.Drawing.Size(416, 22);
             this.startTime.TabIndex = 7;
+            this.startTime.Validating += new System.ComponentModel.CancelEventHandler(this.startTime_Validating);
             // 
             // nameTxtBox
             // 
@@ -197,6 +198,7 @@
             this.locationComboBx.TabIndex = 9;
             this.locationComboBx.TriangleColorA = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(176)))), ((int)(((byte)(214)))));
             this.locationComboBx.TriangleColorB = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
+            this.locationComboBx.Validating += new System.ComponentModel.CancelEventHandler(this.locationComboBx_Validating);
             // 
             // descTxtBox
             // 

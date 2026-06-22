@@ -90,6 +90,29 @@ namespace SportsGalaxy
             matricNoTxtBox.Text = "";
         }
 
+        private void passwordTxtBox_Validating(object sender, CancelEventArgs e)
+        {
+            //Password creation requirement for user
+            string password = passwordTxtBox.Text;
+
+            if (string.IsNullOrEmpty(password))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(passwordTxtBox, "Password is required");
+            }
+            else if (password.Length < 8 ) //Check passsword length, let user insert at least 8 characters 
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(passwordTxtBox, "Password must be at least 8 characters long.");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(passwordTxtBox, "");
+            }
+
+        }
+
         private void LoadCustomFont()
         {
             // Apply to your controls
@@ -219,6 +242,11 @@ namespace SportsGalaxy
                 e.Cancel = false;
                 errorProvider4.SetError(matricNoTxtBox, "");
             }
+        }
+
+        private void passwordTxtBox_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

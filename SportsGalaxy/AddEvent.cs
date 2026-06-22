@@ -28,6 +28,14 @@ namespace SportsGalaxy
 
         private void addButton_Click(object sender, EventArgs e)
         {
+            //To fix date picker issue where the message box would stll show "Event added successfully" evem though the date has passed
+            //1) force form to validate all its inputs (Name, Description and Date)
+            if (!this.ValidateChildren(ValidationConstraints.Enabled))
+            {
+                // 2. If any field fails validation, show a message and STOP execution
+                MessageBox.Show("Please correct the errors on the form before submitting.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             insertIntoDatabase();
         }
 
@@ -134,6 +142,11 @@ namespace SportsGalaxy
             locationComboBx.SelectedIndex = -1;
             attendeesBox.Value = 1;
             startDate.Value = DateTime.Now;
+        }
+
+        private void startDate_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

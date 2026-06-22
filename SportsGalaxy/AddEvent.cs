@@ -28,7 +28,7 @@ namespace SportsGalaxy
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            //To fix date picker issue where the message box would stll show "Event added successfully" evem though the date has passed
+            //To fix date picker issue where the message box would still show "Event added successfully" even though the date has passed
             //1) force form to validate all its inputs (Name, Description and Date)
             if (!this.ValidateChildren(ValidationConstraints.Enabled))
             {

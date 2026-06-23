@@ -128,5 +128,10 @@ namespace SportsGalaxy
             ContactForm contactForm = new ContactForm();
             contactForm.ShowDialog();
         }
+
+        private void toolTip3_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
     }
 }

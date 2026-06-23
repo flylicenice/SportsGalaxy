@@ -55,7 +55,7 @@
             // 
             this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(-8, 82);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -83,7 +83,7 @@
             this.panel1.Controls.Add(this.joinLinkLbl);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(275, 658);
             this.panel1.TabIndex = 1;
@@ -226,7 +226,7 @@
             this.subredditTreeView.ForeColor = System.Drawing.Color.White;
             this.subredditTreeView.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(27)))), ((int)(((byte)(29)))));
             this.subredditTreeView.Location = new System.Drawing.Point(0, 0);
-            this.subredditTreeView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.subredditTreeView.Margin = new System.Windows.Forms.Padding(4);
             this.subredditTreeView.Name = "subredditTreeView";
             this.subredditTreeView.Size = new System.Drawing.Size(275, 658);
             this.subredditTreeView.TabIndex = 0;
@@ -238,7 +238,7 @@
             this.nightPanel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.nightPanel1.LeftSideColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(61)))));
             this.nightPanel1.Location = new System.Drawing.Point(-8, -1);
-            this.nightPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nightPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.nightPanel1.Name = "nightPanel1";
             this.nightPanel1.RightSideColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(61)))));
             this.nightPanel1.Side = ReaLTaiizor.Controls.NightPanel.PanelSide.Left;
@@ -262,6 +262,10 @@
             this.toolTip2.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip2.ToolTipTitle = "Look here to see the event joined!";
             // 
+            // toolTip3
+            // 
+            this.toolTip3.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip3_Popup);
+            // 
             // Main_Page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -270,7 +274,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.nightPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(162, 51);
             this.Name = "Main_Page";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -103,10 +103,10 @@ namespace SportsGalaxy
                 pictureBox.Image = Properties.Resources.basketball;
             } else if (location == "Badminton Court")
             {
-                pictureBox.Image = Properties.Resources.football;
+                pictureBox.Image = Properties.Resources.badminton;
             } else if (location == "Netball Court")
             {
-                pictureBox.Image = Properties.Resources.football;
+                pictureBox.Image = Properties.Resources.netball;
             }
         }
 

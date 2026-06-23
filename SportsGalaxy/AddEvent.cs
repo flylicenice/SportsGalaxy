@@ -28,10 +28,7 @@ namespace SportsGalaxy
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            if (ValidateChildren())
-            {
-                insertIntoDatabase();
-            }
+            insertIntoDatabase();
         }
 
         private void LoadCustomFont()
@@ -170,6 +167,11 @@ namespace SportsGalaxy
             {
                 errorProvider1.SetError(startTime, "");
             }
+        }
+
+        private void startDate_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

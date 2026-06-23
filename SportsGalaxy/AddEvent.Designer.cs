@@ -105,6 +105,7 @@
             this.startDate.Name = "startDate";
             this.startDate.Size = new System.Drawing.Size(416, 22);
             this.startDate.TabIndex = 3;
+            this.startDate.ValueChanged += new System.EventHandler(this.startDate_ValueChanged);
             this.startDate.Validating += new System.ComponentModel.CancelEventHandler(this.startDate_validating);
             // 
             // nameLbl

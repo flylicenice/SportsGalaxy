@@ -83,6 +83,16 @@ namespace SportsGalaxy.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap badminton {
+            get {
+                object obj = ResourceManager.GetObject("badminton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap basketball {
             get {
                 object obj = ResourceManager.GetObject("basketball", resourceCulture);
@@ -166,6 +176,16 @@ namespace SportsGalaxy.Properties {
         internal static System.Drawing.Bitmap likeIcon {
             get {
                 object obj = ResourceManager.GetObject("likeIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap netball {
+            get {
+                object obj = ResourceManager.GetObject("netball", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

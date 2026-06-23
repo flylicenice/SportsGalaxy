@@ -160,7 +160,23 @@ namespace SportsGalaxy
             dateLbl.Text = date;
             timeLbl.Text = time;
 
-            this.eventId = eventId;  this.eventName = name; this.eventLocation = location; this.eventDate = date; this.eventTime = time;
+
+            //To fix issue by converting date string into clean date-only format
+            if (DateTime.TryParse(date, out DateTime parsedDate))
+            {
+                dateLbl.Text = parsedDate.ToString("d/M/yyyy"); 
+            }
+            else
+            {
+                dateLbl.Text = date; 
+            }
+
+            this.eventId = eventId;
+            this.eventName = name;
+            this.eventLocation = location;
+            this.eventDate = date;
+            this.eventTime = time;
+            
         }
 
         private Bitmap GenerateQRBitmap(string dataText)

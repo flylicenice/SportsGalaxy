@@ -28,14 +28,6 @@ namespace SportsGalaxy
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            //To fix date picker issue where the message box would still show "Event added successfully" even though the date has passed
-            //1) force form to validate all its inputs (Name, Description and Date)
-            if (!this.ValidateChildren(ValidationConstraints.Enabled))
-            {
-                // 2. If any field fails validation, show a message and STOP execution
-                MessageBox.Show("Please correct the errors on the form before submitting.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
             insertIntoDatabase();
         }
 
@@ -55,7 +47,7 @@ namespace SportsGalaxy
 
         private void nameTxtBx_validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(nameTxtBox.Text))
+            if (string.IsNullOrWhiteSpace(nameTxtBox.Text))
             {
                 errorProvider1.SetError(nameTxtBox, "Event name is required.");
                 e.Cancel = true;
@@ -140,8 +132,41 @@ namespace SportsGalaxy
             nameTxtBox.Text = "";
             descTxtBox.Text = "";
             locationComboBx.SelectedIndex = -1;
-            attendeesBox.Value = 1;
+            attendeesBox.Value = attendeesBox.Minimum;
             startDate.Value = DateTime.Now;
+            startTime.Value = DateTime.Now;
+
+            errorProvider1.Clear();
+        }
+
+        private void locationComboBx_Validating(object sender, CancelEventArgs e)
+        {
+            if (locationComboBx.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(locationComboBx,
+                    "Please select a location.");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(locationComboBx, "");
+            }
+        }
+
+        private void startTime_Validating(object sender, CancelEventArgs e)
+        {
+            DateTime eventDateTime = startDate.Value.Date + startTime.Value.TimeOfDay;
+
+            if (eventDateTime < DateTime.Now)
+            {
+                errorProvider1.SetError(startTime, "Event time cannot be in the past.");
+
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(startTime, "");
+            }
         }
 
         private void startDate_ValueChanged(object sender, EventArgs e)

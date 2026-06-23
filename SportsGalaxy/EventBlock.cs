@@ -31,9 +31,10 @@ namespace SportsGalaxy
 
         public void FillData(string name, int eventid, string location, string date, string time, string desc, int current, int max)
         {
+            DateTime.TryParse(date, out DateTime parsedDate);
             nameLbl.Text = name;
             locationLbl.Text = location;
-            dateLbl.Text = date;
+            dateLbl.Text = parsedDate.ToString("d/M/yyyy");
             timeLbl.Text = time;
             maxLabel.Text = $"Slots: {current} / {max}";
 

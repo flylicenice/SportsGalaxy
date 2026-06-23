@@ -155,21 +155,18 @@ namespace SportsGalaxy
 
         public void FillData(int eventId, string name, string location, string date, string time)
         {
+            DateTime.TryParse(date, out DateTime parsedDate);
+            
+                dateLbl.Text = parsedDate.ToString("d/M/yyyy");
+            
+
             nameLbl.Text = name;
             locationLbl.Text = location;
-            dateLbl.Text = date;
             timeLbl.Text = time;
 
 
             //To fix issue by converting date string into clean date-only format
-            if (DateTime.TryParse(date, out DateTime parsedDate))
-            {
-                dateLbl.Text = parsedDate.ToString("d/M/yyyy"); 
-            }
-            else
-            {
-                dateLbl.Text = date; 
-            }
+
 
             this.eventId = eventId;
             this.eventName = name;

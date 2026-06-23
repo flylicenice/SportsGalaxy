@@ -28,7 +28,10 @@ namespace SportsGalaxy
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            insertIntoDatabase();
+            if(ValidateChildren())
+            {
+                insertIntoDatabase();
+            }
         }
 
         private void LoadCustomFont()

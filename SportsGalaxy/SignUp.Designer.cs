@@ -250,7 +250,6 @@
             this.passwordTxtBox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.passwordTxtBox.UnknownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.passwordTxtBox.UseSystemPasswordChar = true;
-            this.passwordTxtBox.Click += new System.EventHandler(this.passwordTxtBox_Click);
             this.passwordTxtBox.Validating += new System.ComponentModel.CancelEventHandler(this.passwordTxtBox_Validating);
             // 
             // lblPassword

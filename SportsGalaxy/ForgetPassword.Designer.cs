@@ -76,7 +76,7 @@
             this.parrotGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
             this.parrotGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.parrotGradientPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.parrotGradientPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.parrotGradientPanel1.Name = "parrotGradientPanel1";
             this.parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             this.parrotGradientPanel1.PrimerColor = System.Drawing.Color.White;
@@ -100,7 +100,7 @@
             this.emailTxtBox.ColorF = System.Drawing.Color.Black;
             this.emailTxtBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(218)))), ((int)(((byte)(255)))));
             this.emailTxtBox.Location = new System.Drawing.Point(307, 175);
-            this.emailTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.emailTxtBox.MinimumSize = new System.Drawing.Size(266, 30);
             this.emailTxtBox.Name = "emailTxtBox";
             this.emailTxtBox.Size = new System.Drawing.Size(373, 22);
@@ -117,7 +117,7 @@
             this.resetBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.resetBtn.ForeColor = System.Drawing.Color.White;
             this.resetBtn.Location = new System.Drawing.Point(409, 254);
-            this.resetBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.resetBtn.Margin = new System.Windows.Forms.Padding(4);
             this.resetBtn.Name = "resetBtn";
             this.resetBtn.Size = new System.Drawing.Size(160, 49);
             this.resetBtn.TabIndex = 5;
@@ -137,10 +137,10 @@
             this.backLinkLbl.Location = new System.Drawing.Point(467, 329);
             this.backLinkLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.backLinkLbl.Name = "backLinkLbl";
-            this.backLinkLbl.Size = new System.Drawing.Size(40, 20);
+            this.backLinkLbl.Size = new System.Drawing.Size(20, 20);
             this.backLinkLbl.TabIndex = 4;
             this.backLinkLbl.TabStop = true;
-            this.backLinkLbl.Text = "Back";
+            this.backLinkLbl.Text = "x`";
             this.backLinkLbl.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
             this.backLinkLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.backLinkLbl_LinkClicked);
             // 
@@ -152,7 +152,7 @@
             this.ClientSize = new System.Drawing.Size(961, 385);
             this.Controls.Add(this.parrotGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ForgetPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Forget Password";

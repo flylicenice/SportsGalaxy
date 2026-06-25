@@ -34,6 +34,22 @@ namespace SportsGalaxy
 
         private void signUpBtn_Click(object sender, EventArgs e)
         {
+            // Check empty fields
+            if (string.IsNullOrWhiteSpace(userNameTxtBox.Text) ||
+                string.IsNullOrWhiteSpace(emailTxtBox.Text) ||
+                string.IsNullOrWhiteSpace(matricNoTxtBox.Text) ||
+                string.IsNullOrWhiteSpace(passwordTxtBox.Text) ||
+                string.IsNullOrWhiteSpace(confirmPassTxtBox.Text))
+            {
+                MessageBox.Show("Please fill in all required fields.",
+                    "Missing Information",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                return;
+            }
+
+
             string insertQuery = "INSERT INTO [User] (matric_no, user_name, password, email) VALUES (@matric_no, @user_name, @password, @email)";
 
             if (passwordTxtBox.Text != confirmPassTxtBox.Text)
@@ -242,11 +258,6 @@ namespace SportsGalaxy
                 e.Cancel = false;
                 errorProvider4.SetError(matricNoTxtBox, "");
             }
-        }
-
-        private void passwordTxtBox_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

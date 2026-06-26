@@ -32,12 +32,14 @@
             this.lblWelcomeBack = new System.Windows.Forms.Label();
             this.IDTxtBox = new System.Windows.Forms.TextBox();
             this.passwordTxtBox = new System.Windows.Forms.TextBox();
+            this.lblYourID = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // loginBtn
             // 
             this.loginBtn.Location = new System.Drawing.Point(165, 236);
-            this.loginBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loginBtn.Margin = new System.Windows.Forms.Padding(4);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(100, 34);
             this.loginBtn.TabIndex = 0;
@@ -58,35 +60,49 @@
             // IDTxtBox
             // 
             this.IDTxtBox.Location = new System.Drawing.Point(84, 111);
-            this.IDTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.IDTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.IDTxtBox.Name = "IDTxtBox";
             this.IDTxtBox.Size = new System.Drawing.Size(272, 22);
             this.IDTxtBox.TabIndex = 2;
-            this.IDTxtBox.Text = "Your ID";
-            this.IDTxtBox.Enter += new System.EventHandler(this.IDTxtBox_Enter);
-            this.IDTxtBox.Leave += new System.EventHandler(this.IDTxtBox_Leave);
             // 
             // passwordTxtBox
             // 
             this.passwordTxtBox.Location = new System.Drawing.Point(84, 171);
-            this.passwordTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.passwordTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.passwordTxtBox.Name = "passwordTxtBox";
             this.passwordTxtBox.Size = new System.Drawing.Size(272, 22);
             this.passwordTxtBox.TabIndex = 3;
-            this.passwordTxtBox.Text = "Password";
-            this.passwordTxtBox.Enter += new System.EventHandler(this.passwordTxtBox_Enter);
-            this.passwordTxtBox.Leave += new System.EventHandler(this.passwordTxtBox_Leave);
+            // 
+            // lblYourID
+            // 
+            this.lblYourID.AutoSize = true;
+            this.lblYourID.Location = new System.Drawing.Point(81, 91);
+            this.lblYourID.Name = "lblYourID";
+            this.lblYourID.Size = new System.Drawing.Size(20, 16);
+            this.lblYourID.TabIndex = 4;
+            this.lblYourID.Text = "ID";
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(84, 148);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(67, 16);
+            this.lblPassword.TabIndex = 5;
+            this.lblPassword.Text = "Password";
             // 
             // AdminLoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(432, 290);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblYourID);
             this.Controls.Add(this.passwordTxtBox);
             this.Controls.Add(this.IDTxtBox);
             this.Controls.Add(this.lblWelcomeBack);
             this.Controls.Add(this.loginBtn);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminLoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Login";
@@ -101,5 +117,7 @@
         private System.Windows.Forms.Label lblWelcomeBack;
         private System.Windows.Forms.TextBox IDTxtBox;
         private System.Windows.Forms.TextBox passwordTxtBox;
+        private System.Windows.Forms.Label lblYourID;
+        private System.Windows.Forms.Label lblPassword;
     }
 }
